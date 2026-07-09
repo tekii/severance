@@ -102,6 +102,51 @@ the RECORD.
   self-corrected, and proposed the lesson in its own report-back; Devon
   drove its elaboration and fold.
 
+## 2026-07-09 — Entry 5: the workflow migrated its own law, and survived operating on itself
+
+- **Step:** the extraction migration ran in three phases — a mock-first
+  walking skeleton (v0.0.x: release machinery + vendoring rehearsed with
+  a content-free artifact), the law's generalization and release
+  (v0.1.0), and the consumer-side surgery (a 12-package tape vendoring
+  the SPEC, retiring 8 files, rewiring every survivor reference).
+- **Fact:** every mechanism the workflow legislates was exercised *on
+  the migration itself*: hash-pinned transfers (the inner session
+  cannot see the upstream repo — the tape carried the artifact with
+  digests at both ends), the authoritative-tree anchoring rule, the
+  atomic gate, and — decisively — the refusal loop: the inner session
+  held a 12-package tape over one dangling link rather than land 11
+  clean packages around a defect invisible to the test gate.
+- **Interpretation:** a process that cannot be applied to changing
+  itself is ceremony; this one closed the loop — the walking skeleton
+  caught its first real defect before any law moved, and the refusal
+  loop caught the author's sweep miss after. The redundant verifier is
+  not overhead; it is where the residual error rate actually went.
+- **Attribution:** Claude finding (both sessions); Devon drove phase
+  ordering, the mock-first proposal, and every boundary.
+
+## 2026-07-09 — Entry 6: the incomplete sweep — a third verification-failure class
+
+- **Step:** the migration tape's reference sweep grepped for
+  path-prefixed link targets (`notes/learnings.md`); a same-directory
+  link (`[learnings.md](learnings.md)`) slipped through. The inner
+  session's independently-keyed sweep caught it and refused the tape.
+- **Fact:** the sweep was a real check that could fail — and did fail
+  to *look widely enough*: correct pattern, wrong key. The corrected
+  bare-basename sweep found exactly one straggler; the fix was folded
+  into a tape revision and the re-apply landed clean, with a zero-hit
+  dangling-link sweep on the integrated result.
+- **Interpretation:** the verification-failure taxonomy gains a third
+  member — Entry 2 was a *skipped* check, Entry 4 a *broken* check,
+  this is an **incomplete** check: one that can fail but examines too
+  little, which is more insidious because it passes with conviction.
+  Countermeasure observed working: *diversely-keyed* redundant checks —
+  the authoring sweep and the verifying sweep used different patterns,
+  and the union caught what neither alone guaranteed. Design checks for
+  coverage diversity, not just existence.
+- **Attribution:** Claude finding (the inner session's catch and root
+  cause; the outer session's authoring miss); the refusal loop —
+  Devon's constitution — is what turned the catch into a clean landing.
+
 ## Candidates (pending Devon's ruling — not yet numbered entries)
 
 - **Probe before believing relayed claims.** Devon relayed a state-claim
