@@ -59,6 +59,15 @@ lives here), trace-notes thinking for design-bearing removals (via
 NOTES.md/DESIGN.md), and the conceit's anti-overstretch + casing rules
 in all prose.
 
+**No Devon here, no Outie either.** The cast names belong to the
+consumer workflow's story; in this repo the user is simply the user
+and a session is simply a session. `Assisted-By:` lines name the
+**model**, never a cast role — write
+`Assisted-By: Claude (claude-<model-id>)`. (Historical commits signed
+"(Outie, …)" date from the extraction period, when the first
+consumer's outer session doubled as this repo's maintainer — an
+artifact of that period, not a pattern to follow.)
+
 ## Orientation
 
 [DESIGN.md](DESIGN.md) — packaging & release design (read first).
