@@ -1,0 +1,13 @@
+# MANIFEST — build order for the amalgamation artifacts (see DESIGN.md).
+# Order is meaning: artifacts read top-down in the order listed here.
+# Presence is scope: a file not listed ships nowhere.
+# [spec]        -> SEVERANCE.md   (binding law; consumers vendor + load this)
+# [spec.assets] -> SEVERANCE.md Part III, as "### FILE:" fenced blocks
+# [record]      -> RECORD.md      (experiment narrative; built only if non-empty)
+
+[spec]
+preamble.md
+
+[spec.assets]
+
+[record]
