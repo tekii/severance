@@ -29,6 +29,11 @@ replaced by one-line pointers when they do.
 
 ## Open items
 
+- **SPEC graduation candidate (v0.2.x): "probe before proposing" as a
+  general rule** — binding all sessions in all lanes (register Entry
+  8); the constitution's author-side "prove the tree authoritative
+  before anchoring" becomes its named instance. Ships with the
+  subagents sentence below.
 - **SPEC graduation candidate (next SPEC-bearing release):** one
   vendor-neutral sentence in the constitution's "Subagents inherit"
   clause — *"do not assume a spawned agent has this law in context —

@@ -18,6 +18,17 @@ only when the user prompts it; never push without an explicit ask.
   commits may leave it reporting DRIFT (sources ahead of artifacts —
   expected mid-cycle; say so in the commit message).
 
+## Probe before proposing
+
+Before authoring or proposing any change, probe the current
+authoritative state: `git status -sb` + `git log` (fresh — not your
+session-start snapshot), read the actual target files, and check
+in-flight work (`gh pr list`, pending artifacts). Memory, instructions,
+and snapshots are *hypotheses about* state — the probe is the only
+source of "is". Name what you checked, so the proposal is verifiable.
+(Register Entry 8; a web session once PR'd a file this repo already
+had.)
+
 ## Before any commit
 
 - Run `make check`; a failure must be either fixed or the known

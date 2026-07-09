@@ -176,15 +176,38 @@ the RECORD.
   practices landed in the first consumer's profile as "Subagents
   (Refiners): bound by accountability, not knowledge".
 
-## Candidates (pending Devon's ruling — not yet numbered entries)
+## 2026-07-09 — Entry 8: state is probed, never assumed (the umbrella)
 
-- **Probe before believing relayed claims.** Devon relayed a state-claim
-  ("the Innie offered to push") after the state had already changed, then
-  revealed the relay was a test. Shared git state is the arbiter both
-  sessions can consult; the passing move is to probe the shared body
-  before believing narrative about it. Completes the verification-failure
-  taxonomy: skipped check (E2), broken check (E4), narrative in place of
-  a check.
+- **Step:** the same failure surfaced a fifth time — a web session
+  proposed a repo config file (as a PR) without checking the repo's
+  current state, colliding with the config another session had already
+  landed on `master` from the same relayed spec. (It then self-caught:
+  closed its own PR with a correct diagnosis and reset the branch.)
+- **Fact:** five instances now on record, one organism: the outer
+  author anchoring against unproven disk reads (Entry 2); the inner's
+  invented race-condition atop a broken check (Entry 4); a relayed
+  push-offer refuted by the shared refs (Devon's test — previously the
+  "probe before believing relayed claims" candidate, absorbed here); a
+  session's own memory recalled as current state (the Outie, three
+  times in one day, caught by Devon each time); and the web session's
+  PR. Each limb had a local rule; the organism had none.
+- **Interpretation:** an LLM's characteristic failure is not wrong
+  reasoning but **unprobed premises** — beliefs about state (from
+  memory, instructions, training reflex, or narrative) acted on as if
+  they were state. A session's own memory is just a relay from its past
+  self, and it lies the same way. The fix is mechanical, cheap, and
+  constantly skipped — which is why it must be law rather than advice:
+  probe the authoritative state contemporaneously with the act, and
+  name what was checked so the proposal is verifiable. Graduated: a
+  "probe before proposing" rule enters the vendor repo's own CLAUDE.md
+  now, and is queued for the SPEC at v0.2.x, generalizing the
+  constitution's author-side anchoring bullet into a rule for all
+  sessions in all lanes.
+- **Attribution:** user-originated as pattern-diagnosis (Devon named
+  the disease across carriers and demanded the rule); model findings
+  for the individual instances.
+
+## Candidates (pending Devon's ruling — not yet numbered entries)
 - **Friction moved from doing to checking** (Devon-authored,
   2026-07-09). LLM collaboration removes the labor-friction that made
   trial-and-error expensive, so empirical approaches become the rational
