@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "make check 2>&1 || echo 'severance: DRIFT above is expected mid-cycle (sources ahead of artifacts); it MUST be clean at release commits. Never hand-edit SEVERANCE.md/RECORD.md.'"
+          }
+        ]
+      }
+    ]
+  }
+}

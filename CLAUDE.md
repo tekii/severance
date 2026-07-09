@@ -1,0 +1,45 @@
+# tekii/severance — the Severance workflow's home repo
+
+This repo runs a **plain single-session lane** (mostly Claude Code web):
+no container, no Innie, no severed counterpart here (DESIGN.md,
+constraint 2). Safety is **boundaries, not severance**: commit or tag
+only when the user prompts it; never push without an explicit ask.
+
+## Sources vs artifacts (the release discipline)
+
+- The small `*.md` **source files are the truth**. `SEVERANCE.md` and
+  `RECORD.md` are **built** from them per `MANIFEST` by `make release`
+  — **never hand-edit the artifacts.**
+- Artifacts are rebuilt and committed **only in release commits** (the
+  tagged commits): edit sources → set `VERSION` → `make release` →
+  commit `release vX.Y.Z: …` → `git tag -a vX.Y.Z`.
+- `make check` proves the committed artifacts equal a fresh rebuild.
+  It MUST pass at every release commit. Between releases, source-only
+  commits may leave it reporting DRIFT (sources ahead of artifacts —
+  expected mid-cycle; say so in the commit message).
+
+## Before any commit
+
+- Run `make check`; a failure must be either fixed or the known
+  mid-cycle DRIFT, never a hand-edited artifact.
+- Path hygiene (conventions/no-user-specific-paths.md) — both empty:
+  `git grep -iE '/(home|Users)/[A-Za-z0-9_.-]+/'` and
+  `git grep -i '<your-login>'`.
+- Attribution (conventions/git-commit-attribution.md): AI mentions use
+  `Assisted-By:` — **never `Co-Authored-By:`**; some harness defaults
+  append it automatically — strip it.
+
+## Dependencies
+
+GNU Make + POSIX shell only. Do not add dependencies.
+
+## Orientation
+
+[DESIGN.md](DESIGN.md) — packaging & release design (read first).
+[conceit.md](conceit.md) — the naming metaphor. [constitution.md](constitution.md)
++ [conventions/](conventions/) — the binding law's sources.
+[profile-contract.md](profile-contract.md) — what every consumer answers.
+[learnings.md](learnings.md) — the experiment's register. [NOTES.md](NOTES.md)
+— open items. Cast: **Devon** = the user, **Outie** = outer session,
+**Innie** = container session, **Refiners** = spawned agents (these name
+the *consumer* workflow's roles — this repo itself runs the plain lane).
