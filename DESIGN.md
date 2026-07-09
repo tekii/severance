@@ -40,7 +40,8 @@ publishable artifact.
 1. **Source tree (this repo) — the truth.** Authored as many small
    markdown files (OKF-style: file path = concept identity), e.g.
    `constitution.md`, `conventions/*.md`, `conceit.md`, `learnings.md`,
-   `assets/*` (real files: `devcontainer.json`, `b3-fleet.sh`, …),
+   `assets/*` (real files: `devcontainer.json`, `mdr.sh` — the fleet
+   launcher, renamed from `b3-fleet.sh` on 2026-07-09, …),
    `MANIFEST`, `VERSION`, `Makefile`.
 2. **Amalgamation artifacts — built, never hand-edited.**
    `make release` concatenates the tree per the MANIFEST into:
@@ -73,7 +74,7 @@ conventions/trace-notes.md
 profile-contract.md
 [spec.assets]
 assets/devcontainer.json
-assets/b3-fleet.sh
+assets/mdr.sh
 [record]
 conceit.md
 learnings.md
