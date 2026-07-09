@@ -33,6 +33,21 @@ only when the user prompts it; never push without an explicit ask.
 
 GNU Make + POSIX shell only. Do not add dependencies.
 
+## The law here is cargo, not law
+
+`constitution.md` and `conventions/` are **sources** of the law that
+binds *consumer* projects' sessions (tapes, `.handoff/`, Outie/Innie
+lanes, the consumer's test gate). None of that machinery exists in
+this repo: do not look for `.handoff/`, do not treat yourself as an
+Outie or Innie, do not expect tapes to edit these files — here they
+are text you maintain. ("The gate" here means `make check`, not a
+consumer's test suite; this repo is the vendor, so it has no
+`profile.md`.) Rules this repo **does** self-apply: attribution and
+path hygiene (above), the learnings-register discipline (the register
+lives here), trace-notes thinking for design-bearing removals (via
+NOTES.md/DESIGN.md), and the conceit's anti-overstretch + casing rules
+in all prose.
+
 ## Orientation
 
 [DESIGN.md](DESIGN.md) — packaging & release design (read first).
