@@ -43,7 +43,13 @@ The SPEC's preamble carries the working table; the mappings' stories:
   unsevered ally — single author per tape, a reply is a new tape, the
   consumer disposes of it after viewing. That is the `.handoff/`
   lifecycle, mechanism for mechanism. "Devon passes the camcorder" *is*
-  the activation — one pass, one authorized leg.
+  the activation — one pass, one authorized leg. The source incident:
+  the season 2 finale, **"Cold Harbor" (S2E10)** — the two Marks trade
+  camcorder messages in a severance-equipped birthing cabin, mediated
+  by Mark's unsevered sister (our Devon's namesake) and Cobel, the
+  negotiation decaying because neither self can verify the other's
+  promises — **the failure this workflow's provenance rules exist to
+  prevent.**
 
 Show-fidelity deltas, owned rather than hidden: in the show the channel
 is contraband, ours is constituted by the authority itself; the show's

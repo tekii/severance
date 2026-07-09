@@ -147,6 +147,35 @@ the RECORD.
   cause; the outer session's authoring miss); the refusal loop —
   Devon's constitution — is what turned the catch into a clean landing.
 
+## 2026-07-09 — Entry 7: agents don't load the law
+
+- **Step:** post-migration, Devon posed the question of whether spawned
+  agents know the vendored law; the Innie probed two agent types
+  spawned from its live session and audited the channel's write guards.
+- **Fact:** a general-purpose subagent inherited the *parent's* stale,
+  pre-migration context snapshot — citing as its loaded law files the
+  migration had already deleted from disk — and an Explore-class agent
+  loaded no project context at all. Nothing hard-blocks a law-violating
+  write except an agent's tool profile: the channel is guarded by
+  detection + accountability, by design. Corollary confirmed on the
+  host: the long-lived outer session likewise ran on its session-start
+  snapshot, knowing the post-migration law only by having authored it.
+- **Interpretation:** a spawned agent is **bound by accountability, not
+  knowledge** — the constitution's "Subagents inherit" clause binds the
+  *parent*; the child's awareness must be engineered, never assumed:
+  keep law-bearing steps in-session, inject the needed rules into spawn
+  prompts, gate agent output as raw data, and use read-only tool
+  profiles as the only hard lever. Threat model scoped by Devon:
+  accidental mistakes, not adversarial agents. (A live user-level
+  illustration arrived the same day: an attribution correction typed
+  into a side-chat pane never reached the working session — information
+  existing somewhere does not bind an agent that cannot see it.)
+- **Attribution:** user-originated (Devon posed the discovery and set
+  the scoping); model finding for the verification probes (the inner
+  session, which also proposed the mitigations). The consumer-side
+  practices landed in the first consumer's profile as "Subagents
+  (Refiners): bound by accountability, not knowledge".
+
 ## Candidates (pending Devon's ruling — not yet numbered entries)
 
 - **Probe before believing relayed claims.** Devon relayed a state-claim

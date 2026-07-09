@@ -19,13 +19,19 @@ section() {
     awk -v s="[$1]" '$0==s{f=1;next} /^\[/{f=0} f&&NF&&$0!~/^#/' MANIFEST
 }
 
+# frontmatter TYPE TITLE DESCRIPTION TAGS — OKF-conformant (type is the
+# field OKF requires; title/description/tags/timestamp keep the artifact
+# a valid citizen of consumers' OKF trees) + the release pin fields.
 frontmatter() {
-    printf -- '---\ntitle: %s\nversion: %s\nbuilt-from: v%s\ndate: %s\n---\n' \
-        "$1" "$VERSION" "$VERSION" "$DATE"
+    printf -- '---\ntype: %s\ntitle: %s\ndescription: %s\ntags: %s\ntimestamp: %s\nversion: %s\nbuilt-from: v%s\n---\n' \
+        "$1" "$2" "$3" "$4" "$DATE" "$VERSION" "$VERSION"
 }
 
 {
-    frontmatter 'SEVERANCE — the severed multi-session workflow (SPEC)'
+    frontmatter 'Convention' \
+        'SEVERANCE — the severed multi-session workflow (SPEC)' \
+        "The Severance workflow's binding law — constitution, conventions, profile contract — amalgamated at v$VERSION. Vendored copy: do not edit; update by re-vendoring a release." \
+        '[severance, spec, workflow, vendored]'
     for f in $(section spec); do
         printf '\n<!-- ═══ source: %s ═══ -->\n\n' "$f"
         cat "$f"
@@ -44,7 +50,10 @@ frontmatter() {
 REC=$(section record)
 if [ -n "$REC" ]; then
     {
-        frontmatter 'SEVERANCE — experiment record (RECORD)'
+        frontmatter 'Reference' \
+            'SEVERANCE — experiment record (RECORD)' \
+            "The Severance experiment's narrative record — conceit, prior art, learnings register — built at v$VERSION. For human readers; not loaded into sessions." \
+            '[severance, record, experiment]'
         for f in $REC; do
             printf '\n<!-- ═══ source: %s ═══ -->\n\n' "$f"
             cat "$f"

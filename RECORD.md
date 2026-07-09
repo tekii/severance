@@ -1,8 +1,11 @@
 ---
+type: Reference
 title: SEVERANCE — experiment record (RECORD)
-version: 0.1.0
-built-from: v0.1.0
-date: 2026-07-09
+description: The Severance experiment's narrative record — conceit, prior art, learnings register — built at v0.1.1. For human readers; not loaded into sessions.
+tags: [severance, record, experiment]
+timestamp: 2026-07-09
+version: 0.1.1
+built-from: v0.1.1
 ---
 
 <!-- ═══ source: conceit.md ═══ -->
@@ -52,7 +55,13 @@ The SPEC's preamble carries the working table; the mappings' stories:
   unsevered ally — single author per tape, a reply is a new tape, the
   consumer disposes of it after viewing. That is the `.handoff/`
   lifecycle, mechanism for mechanism. "Devon passes the camcorder" *is*
-  the activation — one pass, one authorized leg.
+  the activation — one pass, one authorized leg. The source incident:
+  the season 2 finale, **"Cold Harbor" (S2E10)** — the two Marks trade
+  camcorder messages in a severance-equipped birthing cabin, mediated
+  by Mark's unsevered sister (our Devon's namesake) and Cobel, the
+  negotiation decaying because neither self can verify the other's
+  promises — **the failure this workflow's provenance rules exist to
+  prevent.**
 
 Show-fidelity deltas, owned rather than hidden: in the show the channel
 is contraband, ours is constituted by the authority itself; the show's
@@ -223,6 +232,80 @@ the RECORD.
 - **Attribution:** Claude finding — the Innie self-caught,
   self-corrected, and proposed the lesson in its own report-back; Devon
   drove its elaboration and fold.
+
+## 2026-07-09 — Entry 5: the workflow migrated its own law, and survived operating on itself
+
+- **Step:** the extraction migration ran in three phases — a mock-first
+  walking skeleton (v0.0.x: release machinery + vendoring rehearsed with
+  a content-free artifact), the law's generalization and release
+  (v0.1.0), and the consumer-side surgery (a 12-package tape vendoring
+  the SPEC, retiring 8 files, rewiring every survivor reference).
+- **Fact:** every mechanism the workflow legislates was exercised *on
+  the migration itself*: hash-pinned transfers (the inner session
+  cannot see the upstream repo — the tape carried the artifact with
+  digests at both ends), the authoritative-tree anchoring rule, the
+  atomic gate, and — decisively — the refusal loop: the inner session
+  held a 12-package tape over one dangling link rather than land 11
+  clean packages around a defect invisible to the test gate.
+- **Interpretation:** a process that cannot be applied to changing
+  itself is ceremony; this one closed the loop — the walking skeleton
+  caught its first real defect before any law moved, and the refusal
+  loop caught the author's sweep miss after. The redundant verifier is
+  not overhead; it is where the residual error rate actually went.
+- **Attribution:** Claude finding (both sessions); Devon drove phase
+  ordering, the mock-first proposal, and every boundary.
+
+## 2026-07-09 — Entry 6: the incomplete sweep — a third verification-failure class
+
+- **Step:** the migration tape's reference sweep grepped for
+  path-prefixed link targets (`notes/learnings.md`); a same-directory
+  link (`[learnings.md](learnings.md)`) slipped through. The inner
+  session's independently-keyed sweep caught it and refused the tape.
+- **Fact:** the sweep was a real check that could fail — and did fail
+  to *look widely enough*: correct pattern, wrong key. The corrected
+  bare-basename sweep found exactly one straggler; the fix was folded
+  into a tape revision and the re-apply landed clean, with a zero-hit
+  dangling-link sweep on the integrated result.
+- **Interpretation:** the verification-failure taxonomy gains a third
+  member — Entry 2 was a *skipped* check, Entry 4 a *broken* check,
+  this is an **incomplete** check: one that can fail but examines too
+  little, which is more insidious because it passes with conviction.
+  Countermeasure observed working: *diversely-keyed* redundant checks —
+  the authoring sweep and the verifying sweep used different patterns,
+  and the union caught what neither alone guaranteed. Design checks for
+  coverage diversity, not just existence.
+- **Attribution:** Claude finding (the inner session's catch and root
+  cause; the outer session's authoring miss); the refusal loop —
+  Devon's constitution — is what turned the catch into a clean landing.
+
+## 2026-07-09 — Entry 7: agents don't load the law
+
+- **Step:** post-migration, Devon posed the question of whether spawned
+  agents know the vendored law; the Innie probed two agent types
+  spawned from its live session and audited the channel's write guards.
+- **Fact:** a general-purpose subagent inherited the *parent's* stale,
+  pre-migration context snapshot — citing as its loaded law files the
+  migration had already deleted from disk — and an Explore-class agent
+  loaded no project context at all. Nothing hard-blocks a law-violating
+  write except an agent's tool profile: the channel is guarded by
+  detection + accountability, by design. Corollary confirmed on the
+  host: the long-lived outer session likewise ran on its session-start
+  snapshot, knowing the post-migration law only by having authored it.
+- **Interpretation:** a spawned agent is **bound by accountability, not
+  knowledge** — the constitution's "Subagents inherit" clause binds the
+  *parent*; the child's awareness must be engineered, never assumed:
+  keep law-bearing steps in-session, inject the needed rules into spawn
+  prompts, gate agent output as raw data, and use read-only tool
+  profiles as the only hard lever. Threat model scoped by Devon:
+  accidental mistakes, not adversarial agents. (A live user-level
+  illustration arrived the same day: an attribution correction typed
+  into a side-chat pane never reached the working session — information
+  existing somewhere does not bind an agent that cannot see it.)
+- **Attribution:** user-originated (Devon posed the discovery and set
+  the scoping); model finding for the verification probes (the inner
+  session, which also proposed the mitigations). The consumer-side
+  practices landed in the first consumer's profile as "Subagents
+  (Refiners): bound by accountability, not knowledge".
 
 ## Candidates (pending Devon's ruling — not yet numbered entries)
 

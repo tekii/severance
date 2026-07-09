@@ -133,7 +133,11 @@ rebuild (a check that can actually fail — see Teppan learnings Entry 4).
    the OKF tree's file-path identity is stabler (kept upstream, lost in
    the artifact).
 5. Token tax compounds: the SPEC loads whole into every consumer
-   session forever. Needs an explicit budget (e.g. "SPEC ≤ ~5k tokens")
+   session forever. Budget in **harness-measured tokens** — v0.1.0
+   measured **8.2k loaded** in a real session against a 4.6k words×1.3
+   estimate (markdown-heavy prose tokenizes ~×2.3/word); current
+   budget: **SPEC ≤ ~9k measured** (net cost to the first consumer was
+   ≈ neutral vs the includes it replaced)
    or it degrades silently.
 6. Calibrated to today's circumstances, not virtues: single author,
    prose-dominant law, whole-law adoption, few consumers. **Reopen this
