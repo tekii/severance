@@ -3,11 +3,22 @@
 # Presence is scope: a file not listed ships nowhere.
 # [spec]        -> SEVERANCE.md   (binding law; consumers vendor + load this)
 # [spec.assets] -> SEVERANCE.md Part III, as "### FILE:" fenced blocks
-# [record]      -> RECORD.md      (experiment narrative; built only if non-empty)
+#                  (empty at v0.1.x: script/devcontainer generalization
+#                  is deferred — see NOTES.md open items)
+# [record]      -> RECORD.md      (experiment narrative; humans, not sessions)
 
 [spec]
 preamble.md
+constitution.md
+conventions/git-commit-attribution.md
+conventions/no-user-specific-paths.md
+conventions/trace-notes-on-removal.md
+conventions/learnings-register.md
+profile-contract.md
 
 [spec.assets]
 
 [record]
+conceit.md
+prior-art.md
+learnings.md
