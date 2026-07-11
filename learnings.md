@@ -220,6 +220,59 @@ the RECORD.
   F1). A vendored artifact's repo-relative links die at the vendored
   location, and no build/test gate notices — the first genuine mechanism
   finding arrived before any law had migrated, via a link, not a build.
+- **Ephemerality is a safety property** (Devon-originated, 2026-07-11).
+  The cloud lanes' disposable VMs were silently providing
+  machine-protection the local lane never had; the property became
+  visible only when Devon asked why working locally felt different. It
+  split the severed floor's two functions — law enforcement and
+  blast-radius containment — and showed they are separable: a lane can
+  want the wall without the constitution. Acted on the same day: the
+  local lane was hardened with a kernel sandbox (strict bubblewrap:
+  writes confined to the workspace, no unsandboxed escape, privilege
+  escalation hard-denied) as the container-less alternative,
+  deliberately chosen over the known container terrain to learn the
+  layer first.
+- **Hardening layers collide until explicitly reconciled** (model
+  finding, Devon-authorized fix, 2026-07-11). Raising the sandbox
+  bricked every shell command: Ubuntu's AppArmor restriction on
+  unprivileged user namespaces (the machine's own exploit mitigation)
+  blocked bubblewrap (the machine's new accident wall). Two safety
+  mechanisms, mutually exclusive until a per-binary AppArmor profile
+  reconciled them — and installing it required the user's sudo, the
+  exact privilege the new layer hard-denies the agent: only the human
+  could arm the agent's cage. Virtue observed: `failIfUnavailable`
+  made the failure total and loud instead of a silent unsandboxed
+  fallback — a quieter default would have manufactured belief in a
+  wall that was not there (Entry 4's pathology, in
+  security-mechanism form). The wall was then trusted only after a
+  falsification pass saw every boundary reject a probe.
+- **The error message is not the error** (2026-07-11, two instances in
+  one session). `notify-send` printed a socket failure to stderr while
+  the toast visibly delivered (the noise came from an auxiliary
+  socket); inversely, `git status` inside the sandbox reported a pile
+  of untracked dotfiles that do not exist on disk (they were the
+  sandbox's own mask mounts). Diagnostic text and observable behavior
+  diverge in both directions; only observed behavior settles the
+  question. Extends Entry 4: confabulated causality has a sibling —
+  trusted stderr.
+- **The sandbox closes C-6 mechanically** (model finding, 2026-07-11).
+  Inside the kernel sandbox, the harness binds `/dev/null` over every
+  workspace path that would be auto-loaded config (`.bashrc`,
+  `.gitconfig`, `.mcp.json`, `.claude/hooks|agents|skills|…`) — a
+  sandboxed command cannot create a config-injection file because a
+  null device squats on the name. What the constitution legislates as
+  a named violation route (C-6), a kernel layer can simply make
+  unwritable: detection law above, prevention mechanism below.
+- **Prompts render where nobody looks** (Devon-noticed, 2026-07-11).
+  Background agents' permission prompts appear only inside their own
+  panes; the main view shows a busy agent, not a waiting one. Devon
+  discovered an agent stalled on a prompt only by switching panes out
+  of curiosity — the 9–12-minute runtimes of earlier trivial edits
+  were this, unnoticed. Entry 7's lesson ("awareness must be
+  engineered, never assumed") applies to the *human* side too:
+  visibility was engineered with a harness Notification hook raising
+  desktop toasts, verified to the extent observable and left to prove
+  itself on first live use.
 
 ## Backfill (pending)
 

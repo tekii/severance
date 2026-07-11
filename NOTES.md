@@ -57,3 +57,17 @@ replaced by one-line pointers when they do.
 - **"Report-back by exception"** — discussed and deliberately left
   unadopted (Devon self-tracks); silence-must-be-a-contract caveat
   recorded in the session that raised it.
+- **Sandbox for the Outie — evaluate the merits** (Devon's trigger,
+  2026-07-11). The vendor repo's local lane now runs a strict kernel
+  sandbox (layer-2: bubblewrap wall, no unsandboxed escape, hard-denied
+  escalation — config in untracked `settings.local.json`; prerequisite:
+  an AppArmor `userns` profile for bwrap on Ubuntu ≥23.10). In
+  consumers, the Innie has the container but the *Outie runs bare on
+  the host* — the same layer-2 profile could give the outer lane a
+  machine wall without container ceremony, and its `/dev/null`
+  config-masking closes C-6 mechanically (see register candidates,
+  2026-07-11). Evaluate: interaction with the Outie's read-only duties
+  (probing, drafting — all compatible with a read-open/write-closed
+  wall), the `.handoff/` write path (must remain writable — it's
+  workspace-internal, so it is), and whether the profile graduates
+  into `[spec.assets]` or profile-contract guidance at v0.2.x.
