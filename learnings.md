@@ -273,6 +273,29 @@ the RECORD.
   visibility was engineered with a harness Notification hook raising
   desktop toasts, verified to the extent observable and left to prove
   itself on first live use.
+- **A scoped key restores the probe the wall blocked** (2026-07-13,
+  Devon-triggered). The strict sandbox, by blocking the keyring's DBus
+  socket, disabled all remote git/gh auth — and in doing so blocked
+  `git fetch`, the very probe the constitution's "anchor to the state
+  that ships" rule depends on: the safety mechanism had re-created
+  Entry 8's stale-premise failure. Fix: a fine-grained **read-only**
+  PAT (Contents:read on the two repos), brokered from the GNOME keyring
+  into the sandbox as an env var by a launcher (`claude-severance`),
+  reusing the first consumer's `code-with-gh-token.sh` pattern — the
+  same keyring-outside / env-var-across-the-threshold / scoped-secret
+  broker, now serving a second wall. The capability asymmetry it
+  creates *is* the law's asymmetry rendered as physics: `git fetch`
+  succeeds, `git push` authenticates and dies on a server-side 403
+  ("Write access not granted") — reads free, writes only through Devon,
+  enforced by token scope rather than discipline. Verified by the
+  falsification pair before trust (fetch exit 0; push 403), per Entry
+  4. Two lessons stack: (1) a wall can over-block, silently disabling a
+  *required* check while it blocks the dangerous ones — hardening must
+  be audited for what safety it removes, not only what it adds; (2) the
+  right fix narrows capability to match the law's shape (read-only),
+  rather than widening it back to convenience (a full token). Parked
+  deeper: credential *masking* (proxy-injected, nothing in-env), filed
+  with the Outie-sandbox evaluation.
 
 ## Backfill (pending)
 
