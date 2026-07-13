@@ -296,6 +296,33 @@ the RECORD.
   rather than widening it back to convenience (a full token). Parked
   deeper: credential *masking* (proxy-injected, nothing in-env), filed
   with the Outie-sandbox evaluation.
+- **The iteration loop is a dopamine feed** (Devon-authored,
+  2026-07-13). Fact (Devon's observation, against his pre-LLM
+  developer experience — offered as a superficial comparison, not yet
+  rigorously measured): the work of an iteration — proposing the
+  solution, writing the code, and the R&D to complete the cycle — has
+  moved almost 100% to the LLM side, collapsing the loop to minutes in
+  the Teppan experiment, and the backlog is immediately available to
+  pull the next item from with no setup cost. Interpretation
+  (hypothesis): this configures the workflow like a short-video feed —
+  the compulsive scroll is replaced not by idle content but by a
+  genuine *feeling of progress*, and real reward delivered on a
+  minutes-long cycle with zero friction to the next pull is the
+  architecture of compulsion; it is materially hard to stop, and "it
+  felt productive" is precisely what disguises that as a problem.
+  Sibling to the "friction moved from doing to checking" candidate:
+  both descend from the friction-collapse observation, but where that
+  one names an *epistemic* cost (unverified work arrives faster), this
+  names an *attentional/behavioral* one (the human's own stopping
+  judgment is the resource being spent). Observed symptom (Devon,
+  2026-07-13): the pull to grab the next task wins over pausing to
+  actually read the addition just landed — the review time is the
+  first thing the loop spends, so the comprehension gate the register
+  depends on ("exposure is not comprehension") is exactly what gets
+  starved. This finding half-demonstrates itself: it was captured, but
+  its own numbering was deferred for the same reason it names. Open
+  question for the review: whether the countermeasure is personal
+  (session time-boxing) or belongs in the workflow itself.
 
 ## Backfill (pending)
 
