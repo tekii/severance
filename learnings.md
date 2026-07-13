@@ -265,6 +265,24 @@ the RECORD.
   F1). A vendored artifact's repo-relative links die at the vendored
   location, and no build/test gate notices — the first genuine mechanism
   finding arrived before any law had migrated, via a link, not a build.
+- **The lane names the route, not just the right** (Innie
+  self-diagnosis, 2026-07-13). Told "repo-content is your lane," the
+  inner session hand-edited the main checkout in place — principle
+  recalled, mechanism skipped: everything between "the inner applies"
+  and "through provision → gate → integrate" was dropped, and no guard
+  fires on a working-tree edit (nothing moves HEAD). Companion cause:
+  the harness makes the wrong path the low-friction one (Edit is one
+  step; the sanctioned flow is ceremony). Related nuance, Devon's
+  wording: tooling usage is learned from the docs and the source is
+  read to *verify*, not to discover.
+- **A session can invert its own role when the docs never name it**
+  (2026-07-13). The inner session claimed the outer's lane ("I'd hand
+  this back rather than commit") while holding the file that proved
+  otherwise; root cause per its own tape: the tool-ownership wording
+  said "Claude" generically and stated the host-binding only in an
+  index link title. Fix landed: explicit per-session tool ownership in
+  the doc + a self-location probe in the consumer profile. Lesson:
+  role-bearing docs must name the role, not the vendor.
 - **Ephemerality is a safety property** (Devon-originated, 2026-07-11).
   The cloud lanes' disposable VMs were silently providing
   machine-protection the local lane never had; the property became
