@@ -207,14 +207,59 @@ the RECORD.
   the disease across carriers and demanded the rule); model findings
   for the individual instances.
 
+## 2026-07-13 — Entry 9: the friction collapse both demands verification and starves it (the vise)
+
+- **Step:** two observations Devon authored across the experiment were
+  ruled (2026-07-13) to be numbered together as one cross-linked
+  entry, because each is incomplete without the other. The first
+  (2026-07-09): LLM collaboration removes the labor-friction that made
+  trial-and-error expensive, so empirical approaches become rational —
+  but the danger does not shrink, it *moves*, from the cost of trying
+  to the cost of verifying; friction saved on doing must be reinvested
+  in checking. The second (2026-07-13): with the coding and R&D of an
+  iteration moved almost wholly to the LLM, the Teppan cycle collapsed
+  to minutes and the backlog is instantly pullable, configuring the
+  workflow like a short-video feed whose reward is a genuine feeling of
+  progress — materially hard to stop, and observed to spend *review
+  time first* (the pull to grab the next task beats pausing to read
+  what just landed).
+- **Fact vs interpretation:** verifiable — the iteration's authoring
+  and R&D moved to the LLM; the Teppan cycle runs in minutes; the
+  backlog carries no setup cost to the next pull. Reported but
+  shared-body-unverifiable (a first-person state — the one class the
+  register's "probe the shared body" method cannot settle; cf. the
+  read-only-key candidate on the wall that blocked its own probe): that
+  the loop is hard to stop, and that review is what gets skipped.
+  Offered by Devon as a superficial comparison against his pre-LLM
+  developer experience, not a measured result.
+- **Interpretation:** the two are not merely siblings sharing a root
+  (friction collapse) — they are *opposed on the same variable*,
+  verification. The first raises the amount required; the second lowers
+  the amount supplied (attention, the human's stopping-judgment). The
+  gap between required and supplied is exactly where unverified work
+  accumulates — Entry 8's stale premise and Entry 4's untrusted check,
+  now with a behavioral engine driving the shortfall rather than a lone
+  oversight. Decisively, the two cannot be solved separately: closing
+  the epistemic gap (verify more) means spending the very resource the
+  attentional side depletes, so a fix phrased as "check more carefully"
+  is defeated in advance — it calls on in-the-moment judgment, and that
+  judgment is what the loop spends first. The countermeasure must
+  therefore be *structural* (a forced stop, or a review gate the
+  workflow imposes), not personal resolve — landing the pair back on
+  the register's oldest law: awareness does not bind, only mechanism
+  does (Entries 2, 8). Whether that mechanism is personal (session
+  time-boxing) or belongs in the workflow itself is the open question
+  left for Devon's thorough review.
+- **Attribution:** both observations user-originated (Devon-authored,
+  2026-07-09 and 2026-07-13). The interlock — that they oppose on the
+  same variable, and that the countermeasure must therefore be
+  structural — was model-articulated this session and Devon-ratified
+  (2026-07-13). The comprehension interview is deferred by Devon to his
+  thorough review, so no interview verdict is recorded here; the
+  findings stand as user-authored, their countermeasure unresolved by
+  design.
+
 ## Candidates (pending Devon's ruling — not yet numbered entries)
-- **Friction moved from doing to checking** (Devon-authored,
-  2026-07-09). LLM collaboration removes the labor-friction that made
-  trial-and-error expensive, so empirical approaches become the rational
-  default — but the danger does not shrink; it *moves*: from the cost of
-  trying to the cost of verifying. Every unit of friction saved on doing
-  must be partially reinvested in checking, or low friction just means
-  arriving at the wrong place faster, more comfortably.
 - **Vendoring's failure mode is reference resolution across the repo
   boundary** (Innie-proposed, 2026-07-09, from the walking skeleton's
   F1). A vendored artifact's repo-relative links die at the vendored
@@ -296,33 +341,6 @@ the RECORD.
   rather than widening it back to convenience (a full token). Parked
   deeper: credential *masking* (proxy-injected, nothing in-env), filed
   with the Outie-sandbox evaluation.
-- **The iteration loop is a dopamine feed** (Devon-authored,
-  2026-07-13). Fact (Devon's observation, against his pre-LLM
-  developer experience — offered as a superficial comparison, not yet
-  rigorously measured): the work of an iteration — proposing the
-  solution, writing the code, and the R&D to complete the cycle — has
-  moved almost 100% to the LLM side, collapsing the loop to minutes in
-  the Teppan experiment, and the backlog is immediately available to
-  pull the next item from with no setup cost. Interpretation
-  (hypothesis): this configures the workflow like a short-video feed —
-  the compulsive scroll is replaced not by idle content but by a
-  genuine *feeling of progress*, and real reward delivered on a
-  minutes-long cycle with zero friction to the next pull is the
-  architecture of compulsion; it is materially hard to stop, and "it
-  felt productive" is precisely what disguises that as a problem.
-  Sibling to the "friction moved from doing to checking" candidate:
-  both descend from the friction-collapse observation, but where that
-  one names an *epistemic* cost (unverified work arrives faster), this
-  names an *attentional/behavioral* one (the human's own stopping
-  judgment is the resource being spent). Observed symptom (Devon,
-  2026-07-13): the pull to grab the next task wins over pausing to
-  actually read the addition just landed — the review time is the
-  first thing the loop spends, so the comprehension gate the register
-  depends on ("exposure is not comprehension") is exactly what gets
-  starved. This finding half-demonstrates itself: it was captured, but
-  its own numbering was deferred for the same reason it names. Open
-  question for the review: whether the countermeasure is personal
-  (session time-boxing) or belongs in the workflow itself.
 
 ## Backfill (pending)
 
