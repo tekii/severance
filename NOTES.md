@@ -29,6 +29,13 @@ replaced by one-line pointers when they do.
 
 ## Open items
 
+- **SPEC graduation candidate (v0.2.x): the auto-load ritual** — the
+  first consumer's profile now generalizes the long-session snapshot
+  caveat ("after integrating a change to any auto-loaded config file,
+  restart or re-read before relying on it — the landing session
+  included") and co-locates the C-6 obligation; the SPEC's own
+  long-session note (profile-contract territory / subagents clause)
+  should echo it vendor-neutrally.
 - **SPEC graduation candidate (v0.2.x): "probe before proposing" as a
   general rule** — binding all sessions in all lanes (register Entry
   8); the constitution's author-side "prove the tree authoritative
