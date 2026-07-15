@@ -27,6 +27,18 @@ replaced by one-line pointers when they do.
 - **Agents-don't-load-law register fold** → Entry 7 (user-originated;
   model finding for the probes; Devon's accidental-mistake scoping).
 
+## Graduated (v0.2.0)
+
+- **"Probe before proposing" as a general rule** → constitution.md new
+  section "State is probed, not assumed" (register Entry 8 generalized
+  to all sessions in all lanes; the author-side anchoring bullet and
+  the session-memory expiry rule named as its instances).
+- **Subagents-inherit awareness sentence** → constitution.md
+  "Subagents inherit" now warns a spawned agent may hold none of the
+  law or a stale snapshot — verify or inject, see the profile (register
+  Entry 7, vendor-neutral; harness mechanics stay in consumer
+  profiles).
+
 ## Open items
 
 - **SPEC graduation candidate (v0.2.x): the auto-load ritual** — the
@@ -36,18 +48,6 @@ replaced by one-line pointers when they do.
   included") and co-locates the C-6 obligation; the SPEC's own
   long-session note (profile-contract territory / subagents clause)
   should echo it vendor-neutrally.
-- **SPEC graduation candidate (v0.2.x): "probe before proposing" as a
-  general rule** — binding all sessions in all lanes (register Entry
-  8); the constitution's author-side "prove the tree authoritative
-  before anchoring" becomes its named instance. Ships with the
-  subagents sentence below.
-- **SPEC graduation candidate (next SPEC-bearing release):** one
-  vendor-neutral sentence in the constitution's "Subagents inherit"
-  clause — *"do not assume a spawned agent has this law in context —
-  verify or inject; see your profile"* — generalizing the
-  agents-don't-load-law finding (2026-07-09, user-originated; the
-  harness-specific mechanics stay in consumer profiles; the first
-  consumer's profile has the model section).
 - **Lesson → convention graduation hierarchy** (Devon's future ask, his
   trigger): document how register entries (case-law) graduate into
   binding conventions (law); precedent: Entry 2 → the constitution's

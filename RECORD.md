@@ -1,11 +1,11 @@
 ---
 type: Reference
 title: SEVERANCE — experiment record (RECORD)
-description: The Severance experiment's narrative record — conceit, prior art, learnings register — built at v0.1.1. For human readers; not loaded into sessions.
+description: The Severance experiment's narrative record — conceit, prior art, learnings register — built at v0.2.0. For human readers; not loaded into sessions.
 tags: [severance, record, experiment]
-timestamp: 2026-07-09
-version: 0.1.1
-built-from: v0.1.1
+timestamp: 2026-07-15
+version: 0.2.0
+built-from: v0.2.0
 ---
 
 <!-- ═══ source: conceit.md ═══ -->
@@ -307,27 +307,189 @@ the RECORD.
   practices landed in the first consumer's profile as "Subagents
   (Refiners): bound by accountability, not knowledge".
 
-## Candidates (pending Devon's ruling — not yet numbered entries)
+## 2026-07-09 — Entry 8: state is probed, never assumed (the umbrella)
 
-- **Probe before believing relayed claims.** Devon relayed a state-claim
-  ("the Innie offered to push") after the state had already changed, then
-  revealed the relay was a test. Shared git state is the arbiter both
-  sessions can consult; the passing move is to probe the shared body
-  before believing narrative about it. Completes the verification-failure
-  taxonomy: skipped check (E2), broken check (E4), narrative in place of
-  a check.
-- **Friction moved from doing to checking** (Devon-authored,
-  2026-07-09). LLM collaboration removes the labor-friction that made
-  trial-and-error expensive, so empirical approaches become the rational
-  default — but the danger does not shrink; it *moves*: from the cost of
-  trying to the cost of verifying. Every unit of friction saved on doing
-  must be partially reinvested in checking, or low friction just means
-  arriving at the wrong place faster, more comfortably.
+- **Step:** the same failure surfaced a fifth time — a web session
+  proposed a repo config file (as a PR) without checking the repo's
+  current state, colliding with the config another session had already
+  landed on `master` from the same relayed spec. (It then self-caught:
+  closed its own PR with a correct diagnosis and reset the branch.)
+- **Fact:** five instances now on record, one organism: the outer
+  author anchoring against unproven disk reads (Entry 2); the inner's
+  invented race-condition atop a broken check (Entry 4); a relayed
+  push-offer refuted by the shared refs (Devon's test — previously the
+  "probe before believing relayed claims" candidate, absorbed here); a
+  session's own memory recalled as current state (the Outie, three
+  times in one day, caught by Devon each time); and the web session's
+  PR. Each limb had a local rule; the organism had none.
+- **Interpretation:** an LLM's characteristic failure is not wrong
+  reasoning but **unprobed premises** — beliefs about state (from
+  memory, instructions, training reflex, or narrative) acted on as if
+  they were state. A session's own memory is just a relay from its past
+  self, and it lies the same way. The fix is mechanical, cheap, and
+  constantly skipped — which is why it must be law rather than advice:
+  probe the authoritative state contemporaneously with the act, and
+  name what was checked so the proposal is verifiable. Graduated: a
+  "probe before proposing" rule enters the vendor repo's own CLAUDE.md
+  now, and is queued for the SPEC at v0.2.x, generalizing the
+  constitution's author-side anchoring bullet into a rule for all
+  sessions in all lanes.
+- **Attribution:** user-originated as pattern-diagnosis (Devon named
+  the disease across carriers and demanded the rule); model findings
+  for the individual instances.
+
+## 2026-07-13 — Entry 9: the friction collapse both demands verification and starves it (the vise)
+
+- **Step:** two observations Devon authored across the experiment were
+  ruled (2026-07-13) to be numbered together as one cross-linked
+  entry, because each is incomplete without the other. The first
+  (2026-07-09): LLM collaboration removes the labor-friction that made
+  trial-and-error expensive, so empirical approaches become rational —
+  but the danger does not shrink, it *moves*, from the cost of trying
+  to the cost of verifying; friction saved on doing must be reinvested
+  in checking. The second (2026-07-13): with the coding and R&D of an
+  iteration moved almost wholly to the LLM, the Teppan cycle collapsed
+  to minutes and the backlog is instantly pullable, configuring the
+  workflow like a short-video feed whose reward is a genuine feeling of
+  progress — materially hard to stop, and observed to spend *review
+  time first* (the pull to grab the next task beats pausing to read
+  what just landed).
+- **Fact vs interpretation:** verifiable — the iteration's authoring
+  and R&D moved to the LLM; the Teppan cycle runs in minutes; the
+  backlog carries no setup cost to the next pull. Reported but
+  shared-body-unverifiable (a first-person state — the one class the
+  register's "probe the shared body" method cannot settle; cf. the
+  read-only-key candidate on the wall that blocked its own probe): that
+  the loop is hard to stop, and that review is what gets skipped.
+  Offered by Devon as a superficial comparison against his pre-LLM
+  developer experience, not a measured result.
+- **Interpretation:** the two are not merely siblings sharing a root
+  (friction collapse) — they are *opposed on the same variable*,
+  verification. The first raises the amount required; the second lowers
+  the amount supplied (attention, the human's stopping-judgment). The
+  gap between required and supplied is exactly where unverified work
+  accumulates — Entry 8's stale premise and Entry 4's untrusted check,
+  now with a behavioral engine driving the shortfall rather than a lone
+  oversight. Decisively, the two cannot be solved separately: closing
+  the epistemic gap (verify more) means spending the very resource the
+  attentional side depletes, so a fix phrased as "check more carefully"
+  is defeated in advance — it calls on in-the-moment judgment, and that
+  judgment is what the loop spends first. The countermeasure must
+  therefore be *structural* (a forced stop, or a review gate the
+  workflow imposes), not personal resolve — landing the pair back on
+  the register's oldest law: awareness does not bind, only mechanism
+  does (Entries 2, 8). Whether that mechanism is personal (session
+  time-boxing) or belongs in the workflow itself is the open question
+  left for Devon's thorough review.
+- **Attribution:** both observations user-originated (Devon-authored,
+  2026-07-09 and 2026-07-13). The interlock — that they oppose on the
+  same variable, and that the countermeasure must therefore be
+  structural — was model-articulated this session and Devon-ratified
+  (2026-07-13). The comprehension interview is deferred by Devon to his
+  thorough review, so no interview verdict is recorded here; the
+  findings stand as user-authored, their countermeasure unresolved by
+  design.
+
+## Candidates (pending Devon's ruling — not yet numbered entries)
 - **Vendoring's failure mode is reference resolution across the repo
   boundary** (Innie-proposed, 2026-07-09, from the walking skeleton's
   F1). A vendored artifact's repo-relative links die at the vendored
   location, and no build/test gate notices — the first genuine mechanism
   finding arrived before any law had migrated, via a link, not a build.
+- **The lane names the route, not just the right** (Innie
+  self-diagnosis, 2026-07-13). Told "repo-content is your lane," the
+  inner session hand-edited the main checkout in place — principle
+  recalled, mechanism skipped: everything between "the inner applies"
+  and "through provision → gate → integrate" was dropped, and no guard
+  fires on a working-tree edit (nothing moves HEAD). Companion cause:
+  the harness makes the wrong path the low-friction one (Edit is one
+  step; the sanctioned flow is ceremony). Related nuance, Devon's
+  wording: tooling usage is learned from the docs and the source is
+  read to *verify*, not to discover.
+- **A session can invert its own role when the docs never name it**
+  (2026-07-13). The inner session claimed the outer's lane ("I'd hand
+  this back rather than commit") while holding the file that proved
+  otherwise; root cause per its own tape: the tool-ownership wording
+  said "Claude" generically and stated the host-binding only in an
+  index link title. Fix landed: explicit per-session tool ownership in
+  the doc + a self-location probe in the consumer profile. Lesson:
+  role-bearing docs must name the role, not the vendor.
+- **Ephemerality is a safety property** (Devon-originated, 2026-07-11).
+  The cloud lanes' disposable VMs were silently providing
+  machine-protection the local lane never had; the property became
+  visible only when Devon asked why working locally felt different. It
+  split the severed floor's two functions — law enforcement and
+  blast-radius containment — and showed they are separable: a lane can
+  want the wall without the constitution. Acted on the same day: the
+  local lane was hardened with a kernel sandbox (strict bubblewrap:
+  writes confined to the workspace, no unsandboxed escape, privilege
+  escalation hard-denied) as the container-less alternative,
+  deliberately chosen over the known container terrain to learn the
+  layer first.
+- **Hardening layers collide until explicitly reconciled** (model
+  finding, Devon-authorized fix, 2026-07-11). Raising the sandbox
+  bricked every shell command: Ubuntu's AppArmor restriction on
+  unprivileged user namespaces (the machine's own exploit mitigation)
+  blocked bubblewrap (the machine's new accident wall). Two safety
+  mechanisms, mutually exclusive until a per-binary AppArmor profile
+  reconciled them — and installing it required the user's sudo, the
+  exact privilege the new layer hard-denies the agent: only the human
+  could arm the agent's cage. Virtue observed: `failIfUnavailable`
+  made the failure total and loud instead of a silent unsandboxed
+  fallback — a quieter default would have manufactured belief in a
+  wall that was not there (Entry 4's pathology, in
+  security-mechanism form). The wall was then trusted only after a
+  falsification pass saw every boundary reject a probe.
+- **The error message is not the error** (2026-07-11, two instances in
+  one session). `notify-send` printed a socket failure to stderr while
+  the toast visibly delivered (the noise came from an auxiliary
+  socket); inversely, `git status` inside the sandbox reported a pile
+  of untracked dotfiles that do not exist on disk (they were the
+  sandbox's own mask mounts). Diagnostic text and observable behavior
+  diverge in both directions; only observed behavior settles the
+  question. Extends Entry 4: confabulated causality has a sibling —
+  trusted stderr.
+- **The sandbox closes C-6 mechanically** (model finding, 2026-07-11).
+  Inside the kernel sandbox, the harness binds `/dev/null` over every
+  workspace path that would be auto-loaded config (`.bashrc`,
+  `.gitconfig`, `.mcp.json`, `.claude/hooks|agents|skills|…`) — a
+  sandboxed command cannot create a config-injection file because a
+  null device squats on the name. What the constitution legislates as
+  a named violation route (C-6), a kernel layer can simply make
+  unwritable: detection law above, prevention mechanism below.
+- **Prompts render where nobody looks** (Devon-noticed, 2026-07-11).
+  Background agents' permission prompts appear only inside their own
+  panes; the main view shows a busy agent, not a waiting one. Devon
+  discovered an agent stalled on a prompt only by switching panes out
+  of curiosity — the 9–12-minute runtimes of earlier trivial edits
+  were this, unnoticed. Entry 7's lesson ("awareness must be
+  engineered, never assumed") applies to the *human* side too:
+  visibility was engineered with a harness Notification hook raising
+  desktop toasts, verified to the extent observable and left to prove
+  itself on first live use.
+- **A scoped key restores the probe the wall blocked** (2026-07-13,
+  Devon-triggered). The strict sandbox, by blocking the keyring's DBus
+  socket, disabled all remote git/gh auth — and in doing so blocked
+  `git fetch`, the very probe the constitution's "anchor to the state
+  that ships" rule depends on: the safety mechanism had re-created
+  Entry 8's stale-premise failure. Fix: a fine-grained **read-only**
+  PAT (Contents:read on the two repos), brokered from the GNOME keyring
+  into the sandbox as an env var by a launcher (`claude-severance`),
+  reusing the first consumer's `code-with-gh-token.sh` pattern — the
+  same keyring-outside / env-var-across-the-threshold / scoped-secret
+  broker, now serving a second wall. The capability asymmetry it
+  creates *is* the law's asymmetry rendered as physics: `git fetch`
+  succeeds, `git push` authenticates and dies on a server-side 403
+  ("Write access not granted") — reads free, writes only through Devon,
+  enforced by token scope rather than discipline. Verified by the
+  falsification pair before trust (fetch exit 0; push 403), per Entry
+  4. Two lessons stack: (1) a wall can over-block, silently disabling a
+  *required* check while it blocks the dangerous ones — hardening must
+  be audited for what safety it removes, not only what it adds; (2) the
+  right fix narrows capability to match the law's shape (read-only),
+  rather than widening it back to convenience (a full token). Parked
+  deeper: credential *masking* (proxy-injected, nothing in-env), filed
+  with the Outie-sandbox evaluation.
 
 ## Backfill (pending)
 
