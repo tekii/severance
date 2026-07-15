@@ -1,2 +1,2 @@
-# severance
-Severed workflow experiment
+# Severance
+The severed workflow experiment

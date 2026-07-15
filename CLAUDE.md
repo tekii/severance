@@ -1,4 +1,4 @@
-# tekii/severance — the Severance workflow's home repo
+# tekii/severance — the Severance workflow experiment's home repo
 
 This repo runs a **plain single-session lane** (mostly Claude Code web):
 no container, no Innie, no severed counterpart here (DESIGN.md,
