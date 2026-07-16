@@ -359,6 +359,37 @@ the RECORD.
   rather than widening it back to convenience (a full token). Parked
   deeper: credential *masking* (proxy-injected, nothing in-env), filed
   with the Outie-sandbox evaluation.
+- **Shared external state is unprobed state — and its error path may be
+  unreachable** (consumer incident, Devon-triggered fold, 2026-07-15).
+  Fact: the first consumer's container firewall built its allowlist from
+  an unauthenticated `api.github.com/meta` fetch; a shared VPN exit IP
+  hit GitHub's per-source rate limit (60 req/h), the 403 returned an
+  empty body, and container start failed for an evening because the
+  script treated it as fatal. A latent second fault surfaced in the same
+  read: under `set -euo pipefail` the bare `curl` assignment would kill
+  the script on network failure *before any retry or error handling ran*
+  — the handler existed but was dead code; the `|| true` that makes it
+  reachable is load-bearing. Interpretation, two facets. **(1, the
+  headline) Shared-fate external dependency is unprobed premise pointed
+  outward.** The v0.2.0 rule "state is probed, not assumed" was written
+  for repo state; this is the same disease aimed at *third-party
+  availability* — the build assumed a free, unauthenticated, per-IP-
+  *shared* endpoint would answer, so a stranger on the same exit IP
+  could break the container. External state that another party can
+  exhaust is a premise to make resilient (retry, cache-fallback,
+  authenticate for a higher quota — the last is the read-only-key token-
+  placement question again), never a fact to assume. **(2) A new member
+  of the verification-failure taxonomy: the *unreachable* handler.** Not
+  Entry 2's *skipped* check, Entry 4's *broken* check, or Entry 6's
+  *incomplete* check — a guard the program's own control flow (strict-
+  mode `set -e`) kills before it can run. The code *looks* like it
+  handles the failure; it structurally cannot reach the handling on the
+  real failure mode. Entry 4's law holds: handling earns trust only once
+  *seen* to fail correctly — this never could. Attribution: model
+  finding for the diagnosis (the consumer's sessions, dual Fable 5 /
+  Opus 4.8); Devon triggered the upstream fold. Cross-links Entry 9
+  (probe demanded vs supplied) and the read-only-key candidate (the
+  authenticated-fetch option is the same token-placement decision).
 
 ## Backfill (pending)
 
