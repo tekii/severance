@@ -260,6 +260,17 @@ the RECORD.
   design.
 
 ## Candidates (pending Devon's ruling — not yet numbered entries)
+- **Agents can collapse code and produce side effects**
+  (Devon-originated, 2026-07-17). Given a correct multi-step command
+  sequence, an agent collapsed it into a single worktree-resident
+  compound command; `teardown` then deleted the shell's own cwd, and
+  three clean integrations reported as `Exit code 1` failures — collapse
+  damage silent in substance but loud in signal. The runbook had the
+  correct step but no marker saying it was load-bearing, so the correct
+  sequence read as optional ceremony and was optimized away. Ruled into
+  law the same day (Devon): resist-collapse authoring in Draft anatomy,
+  verbatim execution as inner apply rule 8, verbatim rule-relay in
+  Subagents inherit. Consumer-side fix: Teppan runbook commit `e96dce3`.
 - **Vendoring's failure mode is reference resolution across the repo
   boundary** (Innie-proposed, 2026-07-09, from the walking skeleton's
   F1). A vendored artifact's repo-relative links die at the vendored
