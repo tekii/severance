@@ -320,6 +320,22 @@ the RECORD.
   wall that was not there (Entry 4's pathology, in
   security-mechanism form). The wall was then trusted only after a
   falsification pass saw every boundary reject a probe.
+  *Second instance, quieter (2026-07-19):* the first consumer's
+  container had its agent CLI frozen several versions back, presenting
+  as "the rebuild didn't take." Cause was not a version pin anywhere in
+  the config but a **deliberate hardening choice with an invisible
+  second-order effect** — `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1`,
+  set to suppress background egress, also disables auto-update ("last
+  update attempt: none recorded"), while Docker layer caching meant the
+  image path never refreshed it either. Nothing was broken; the tool's
+  own doctor reported no issues, because this *is* the configuration
+  working. Lesson: hardening's side effects surface later, wearing the
+  costume of a bug — and the diagnosis cost three probes (`which -a`
+  killed a wrong theory, a symlink timestamp proved the cache, the
+  doctor named the true cause, which had been sitting in a config file
+  already read). Corollary for the fold: when a lane deliberately
+  disables a background mechanism, say so where the symptom will be
+  met, or the next session re-derives it.
 - **The error message is not the error** (2026-07-11, two instances in
   one session). `notify-send` printed a socket failure to stderr while
   the toast visibly delivered (the noise came from an auxiliary
