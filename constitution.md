@@ -168,7 +168,12 @@ naming the route makes it auditable:
   verbosity. Mark such a step at the point of use ("load-bearing — do
   not collapse") and name the concrete failure the ordering prevents;
   where feasible, prefer a form that stays correct under collapse
-  (cwd-robust, idempotent) over relying on the marker. A
+  (cwd-robust, idempotent) over relying on the marker. The rule binds
+  **any command sequence a session emits — its own interactive shell
+  chains included**, not only sequences authored into tapes or injected
+  into agents; the canonical footgun is chaining state-reads after a
+  teardown/cleanup step whose side effect (cwd removal, ref deletion)
+  the trailing steps depend on. A
   behavior-identical collapse needs no marker — over-annotation buries
   the real ones.
 - **Label unverified claims** explicitly (e.g. "confirm on first launch")

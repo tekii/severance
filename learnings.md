@@ -259,18 +259,46 @@ the RECORD.
   findings stand as user-authored, their countermeasure unresolved by
   design.
 
+## 2026-07-17 — Entry 10: agents collapse correct sequences — and documentation alone does not stop them
+
+- **Step:** 2026-07-17 — given a correct multi-step integrate/teardown
+  command sequence, an agent collapsed it into a single
+  worktree-resident compound command; `teardown` deleted the shell's
+  own cwd, and three clean integrations reported as `Exit code 1`
+  failures — collapse damage silent in substance but loud in signal.
+  Ruled into law the same day (Devon): resist-collapse authoring in
+  Draft anatomy, verbatim execution as inner apply rule 8, verbatim
+  rule-relay in Subagents inherit (v0.3.0); consumer-side fix with a
+  load-bearing marker, Teppan runbook commit `e96dce3`.
+  **2026-07-21 — recurrence:** same actor class, same command shape,
+  two more occurrences — this time *against* the v0.3.0 law, the
+  runbook's marker, and the exact named one-liner. Structural
+  response (consumer): `mdr.sh integrate`/`teardown` self-report the
+  resulting `master` HEAD, removing the motive for post-teardown
+  chains. SPEC response: generality sentence added to the
+  resist-collapse rule (v0.3.1).
+- **Fact vs interpretation:** facts verifiable in both repos — the
+  law commits and release tags, Teppan `e96dce3`, and the 2026-07-21
+  findings tape with its captured terminal failures; also fact: the
+  recurring session's own write-up cited neither prior record.
+  Interpretation: the comprehension gap survives specific
+  documentation — the rule was mentally filed as tape-scoped despite
+  its general wording and despite the runbook addressing the agent's
+  own flow directly.
+- **Interpretation:** a clean instance of exposure ≠ comprehension
+  (the comprehension-interview theme), now measured across an
+  intervention: marker and law added on 07-17 did not prevent 07-21.
+  That is empirical support for Entry 9's thesis — countermeasures
+  that spend in-the-moment judgment fail; the fix class that remains
+  is structural (make the flow self-reporting so the collapsed tail
+  has nothing to do). Contrast Entry 7 (agents don't *load* the law):
+  here the law was loaded and still not applied — a second, distinct
+  failure layer between context and behavior.
+- **Learner attribution:** Devon-originated (he identified both
+  incidents and that the rule was already in context); model finding
+  for the mechanics (verified against both repos' histories).
+
 ## Candidates (pending Devon's ruling — not yet numbered entries)
-- **Agents can collapse code and produce side effects**
-  (Devon-originated, 2026-07-17). Given a correct multi-step command
-  sequence, an agent collapsed it into a single worktree-resident
-  compound command; `teardown` then deleted the shell's own cwd, and
-  three clean integrations reported as `Exit code 1` failures — collapse
-  damage silent in substance but loud in signal. The runbook had the
-  correct step but no marker saying it was load-bearing, so the correct
-  sequence read as optional ceremony and was optimized away. Ruled into
-  law the same day (Devon): resist-collapse authoring in Draft anatomy,
-  verbatim execution as inner apply rule 8, verbatim rule-relay in
-  Subagents inherit. Consumer-side fix: Teppan runbook commit `e96dce3`.
 - **Vendoring's failure mode is reference resolution across the repo
   boundary** (Innie-proposed, 2026-07-09, from the walking skeleton's
   F1). A vendored artifact's repo-relative links die at the vendored
