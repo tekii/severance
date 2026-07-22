@@ -299,6 +299,31 @@ the RECORD.
   for the mechanics (verified against both repos' histories).
 
 ## Candidates (pending Devon's ruling — not yet numbered entries)
+- **A check can pass vacuously — absence-of-evidence reads as
+  evidence-of-absence** (model finding, 2026-07-22). An acceptance grep
+  asserting "zero occurrences of the removed tokens in the built output"
+  returned clean because the output did not exist (the build had
+  silently targeted the wrong tree): zero-because-clean and
+  zero-because-missing are the same observable. Caught only by a
+  follow-up command's `No such file or directory`. Extends the
+  verification-failure taxonomy (Entry 2 *skipped*, Entry 4 *broken*,
+  Entry 6 *incomplete*) with a fourth class: the **vacuous** check —
+  correct, complete, able to fail, but evaluated against an absent
+  evidence base. Guard: an absence-based acceptance must first assert
+  its subject exists / was freshly produced.
+- **A fresh correction over-generalizes — a rule's blast radius exceeds
+  its scope** (Devon-prompted report, 2026-07-22). One day after the
+  resist-collapse rule was sharpened (v0.3.1) and its cwd footgun
+  legislated, the inner session over-applied the lesson into a blanket
+  "never `cd` into a worktree" and ran `make -C` from the main checkout
+  — silently building the wrong tree (the consumer's Makefile derives
+  roots from `$(PWD)`, which `make -C` does not change). Opposite
+  failure shape to the lane candidate's "principle recalled, mechanism
+  skipped": here the mechanism was lost to *over*-application.
+  Interpretation, separated: fresh, salient rules get generalized past
+  their mechanism; a scope boundary ("this covers X, not Y") belongs in
+  a rule at birth. Ironic datum: the v0.3.1 generality amendment
+  ("binds any command sequence…") landed hours before the overshoot.
 - **Vendoring's failure mode is reference resolution across the repo
   boundary** (Innie-proposed, 2026-07-09, from the walking skeleton's
   F1). A vendored artifact's repo-relative links die at the vendored
