@@ -470,6 +470,41 @@ the RECORD.
   Opus 4.8); Devon triggered the upstream fold. Cross-links Entry 9
   (probe demanded vs supplied) and the read-only-key candidate (the
   authenticated-fetch option is the same token-placement decision).
+- **The refusal protocol's first complete live cycle — and the tape
+  smell it exposed** (model finding, 2026-07-23; evidence: the first
+  consumer's `be74b78` + the firebase tape lifecycle). Facts: a draft
+  tape encoded a bracket-quoting mechanism verified only by design
+  reasoning (autoconf quadrigraphs — converted to `[`/`]` only by
+  autom4te, which the consumer's standalone-m4sugar build never runs);
+  the tape carried an explicit escape-hatch label ("if expansion
+  mangles it, hand back rather than improvise"); the sanctioned gate
+  **passed** (it cannot see the artifact's JSON validity) while the
+  tape's own verification step caught the invalid output; the applier
+  refused with an isolated reproduction and root cause, did not
+  improvise, preserved the worktree; the revision was prototyped
+  empirically (host-side m4sugar run, stress case included) before
+  being taped, and applied clean. Interpretations, separated:
+  (1) "design-verified only" is a tape smell — a novel mechanism ships
+  with empirical proof or an explicit refusal label, and the label is
+  what made this refusal cheap and clean; (2) the first fully-exercised
+  draft→refuse→revise→apply cycle validated the two-session structure —
+  hand-back beat the plausible single-session alternative (improvising
+  a quoting scheme through a green gate); (3) gate blind spots surface
+  through tape-level verification steps, and each such discovery should
+  immediately file a gate-revision candidate (this one did: the JSON
+  check in the consumer's infra register).
+- **A never-executed clause is effectively unknown — first use is where
+  comprehension forms** (user-verified by construction, 2026-07-23).
+  Facts: the first real draft tape under the current constitution
+  included the SPEC's optional paste-in-prompt section; Devon asked
+  where it came from, unaware it was in law he had read — the clause
+  had simply never produced an artifact before. Interpretation,
+  separated: "exposure is not comprehension" has a temporal structure
+  the doctrine doesn't yet state — a clause is effectively unknown to
+  the human until its first execution; first-use moments are natural,
+  well-timed comprehension-interview triggers, cheaper than
+  per-milestone interviews alone. Per the register's own framing, the
+  gap is data, not failure.
 
 ## Backfill (pending)
 

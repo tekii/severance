@@ -108,3 +108,33 @@ replaced by one-line pointers when they do.
   (assertion re-authoring, preserved coverage), and the 2026-07-13
   off-process incident's six-cause self-diagnosis — this codifies the
   behavior so it stops depending on the applier's disposition.
+- **SPEC candidate: attribution beyond the dual lines — reviewers,
+  non-cast participants, and Devon's reshuffle idea** (Devon's trigger,
+  2026-07-24). Precedent: the first consumer's `be74b78` carries three
+  trailers — `(drafting)` Fable 5, `(reviewing)` Gemini 3.5 Flash,
+  `(applying)` Opus 4.8 — exceeding both the SPEC's attribution section
+  (which only rules Assisted-By over Co-Authored-By) and the consumer's
+  dual-line apply rule. Four questions currently answered by
+  improvisation: (1) **role vocabulary** — propose an open-but-meaningful
+  set of role parentheticals, one line per participant, in pipeline
+  order (drafting → reviewing → applying); (2) **threshold** — a line
+  for any AI participant whose contribution is visible in the artifact
+  chain (tape provenance, findings, applied edits); (3)
+  **cast-independence** — attribution is orthogonal to the cast (a
+  reviewer that is neither Outie/Innie/Refiner still gets its line);
+  the workflow rules do NOT thereby extend to non-cast participants;
+  (4) **the single-writer wrinkle** — reviewer input enters via Devon
+  or via the reviewer's own artifacts; a Devon-mediated edit to the
+  author's provenance header is the sanctioned form (Devon's
+  prerogative, not an exception to single-writer). **Devon's reshuffle
+  seed (his framing, to iterate before ruling):** restructure the line
+  format along the lines of `MODEL/ROLE on behalf of AUTHOR` for the
+  agent making the commit — i.e. the trailer names the acting model
+  *and* its role *and* whose authority it acted under, rather than
+  today's flat `Assisted-By: Model (role)` lines. Open sub-questions
+  for that iteration: does `on behalf of` name Devon (the human
+  authority) or the drafting session (the content author)? does the
+  git author/committer identity itself change, or only the trailers?
+  and does the format stay `Assisted-By:`-prefixed for tool/forge
+  compatibility? Natural home once ruled: the SPEC's "Git commit
+  attribution" section, `be74b78` cited as precedent.
