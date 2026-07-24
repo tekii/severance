@@ -78,3 +78,33 @@ replaced by one-line pointers when they do.
   wall), the `.handoff/` write path (must remain writable — it's
   workspace-internal, so it is), and whether the profile graduates
   into `[spec.assets]` or profile-contract guidance at v0.2.x.
+- **SPEC candidate: no experiments in the shared working tree** (Devon's
+  trigger, 2026-07-24). From the first consumer's `driver.m4` incident
+  (2026-07-23): an Outie prototype command chain whose `mkdir && cd`
+  failed silently dropped its follow-on heredoc writes into the repo
+  root — overwriting a **pre-existing untracked file** (unrecoverable:
+  untracked means no git history; shell redirection has no
+  read-before-write guard). Proposed clause (natural home: beside C-5's
+  shared-working-tree bullet): sessions never use the shared tree as an
+  experiment workbench — scratch/prototypes go to session-private
+  storage via **absolute paths**; file-writing steps must not depend on
+  an earlier `cd` having succeeded (a statement after a heredoc is
+  outside the `&&` chain — the resist-collapse family's cwd footnote,
+  seen from the write side); probe any write target that could land in
+  the tree. Incident + rule = learnings-register candidate pair
+  (interim home: the Outie's private memory, per session-memory rules —
+  pointer only).
+- **SPEC candidate: mandatory Innie self-assessment on every tape
+  application** (Devon's requirement, 2026-07-24). Proposed as inner
+  apply rule 9: after applying a tape — before hand-back or commit —
+  the applying session **re-walks the steps it actually took** against
+  the SPEC, the consumer profile, and the consumer's committed
+  conventions, and **reports the result explicitly**: every deviation,
+  apply-time judgment, improvisation, or latitude exercised — and "no
+  deviations" stated, never implied. The report travels in the
+  findings tape (refusals) or the apply report-back (successes).
+  Precedent observed in the wild twice: the firebase-publish refusal
+  (2026-07-23) voluntarily disclosed its apply-time judgments
+  (assertion re-authoring, preserved coverage), and the 2026-07-13
+  off-process incident's six-cause self-diagnosis — this codifies the
+  behavior so it stops depending on the applier's disposition.
