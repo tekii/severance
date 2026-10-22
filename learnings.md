@@ -613,6 +613,110 @@ the RECORD.
   deliberate explanation, not at exposure — and suggests read-backs
   should end with the one line the human is expected to keep.
   Re-explanations given in session the same day.
+- **Two convention texts collided silently; the human settled it by
+  hand** (Innie finding, 2026-10-21/22; evidence `70fa888` → `a7944d9` →
+  `67f07a1`, `findings-session-learnings.md` L3, `findings-run4-markup.md`).
+  Facts: the M4 review rule said disabled code stays `dnl`-prefixed; the
+  comment-style convention's HTML section prescribed `m4_ignore` for
+  multi-line markup; neither text referenced the other. The applier chose
+  by literal reading of the more general rule; resolving it took three
+  tape revisions (two applies discarded uncommitted on Devon's
+  instruction), and revision 3 carried its own internal conflict
+  (balanced vs no brackets), which Devon settled by converting the last
+  block himself. Interpretation, separated: rules accrete per incident
+  and are not cross-read; "the more specific rule wins" was never written
+  down. A convention born next to an overlapping one needs a "which
+  applies where" sentence at birth — the same blast-radius lesson as the
+  over-generalization candidate, from the other side.
+- **Rendered changes converge by capture loop, not by gate** (Innie
+  finding, 2026-10-21; evidence `a9ae46e`, `bfe4271`). Facts: footer step 1
+  went through six rounds of Devon's in-browser adjustments on the Innie's
+  Playwright captures; a real defect (Pico's `nav ul:first-of-type` and
+  `nav li :where(a)` out-specifying the tape's selectors, glyphs collapsed
+  together) was invisible to every textual gate and found only in the
+  first screenshot. Later visual tapes carried pixel or geometry
+  assertions (pixel-identical full-page captures; a paused animation's
+  transform plus bounding-rect centre). Interpretation, separated: for
+  rendered output the capture *is* the gate, and measured geometry made
+  the human's adjustments precise and checkable rather than "a bit left".
+- **Harness configuration is read at start, in both harnesses** (Innie
+  finding 2026-10-22 and Outie/Gemini finding the same day; evidence
+  `0f68519`, `282b66f`, `f149012`; `findings-session-learnings.md` L5,
+  `findings-outie-publish-learnings.md` L4). Facts: two IQC-gate changes to
+  `CLAUDE.md` took effect only after a Claude Code session restart (Devon
+  confirmed); an edit to `.agents/hooks.json` did not unblock the running
+  Antigravity session, which kept executing the cached command string until
+  a server restart — while a freshly spawned subagent read the edited file
+  at once. Interpretation, separated: the auto-load ritual (Entry 7's
+  descendant) is harness-independent; the subagent datum suggests spawning
+  is a cheaper "restart" than restarting, worth checking on the Claude side
+  before relying on it. Side datum on the gate itself: the IQC was tuned in
+  two steps within an hour — first exempting casing and the final period
+  ("ignore"), then showing the auto-correction ("not ignoring the correction
+  fully"); silently passing was an over-correction of a noisy gate.
+- **Build-graph edges are untested by the gate — second instance** (Innie
+  finding 2026-10-21, Outie/Gemini finding 2026-10-22; evidence `f14dcd1`,
+  the `host-publish-followups` tape). Facts: after `configure.m4` changed,
+  rebuilt pages still carried the old LinkedIn URL — no generated rule
+  depended on `configure.m4`; `make test` stayed green; caught by grepping
+  the built hrefs. One day later, editing `firebase-entry.json.m4` printed
+  `Nothing to be done for 'build'` — the generated `PUB/<domain>.json`
+  rule `m4_include`s the template in its recipe without listing it as a
+  prerequisite; same green gate. Interpretation, separated: the gate tests
+  macro output, not the dependency graph; "edit → rebuild → grep the
+  output" was the only net both times. Candidate practice: a generated
+  rule's prerequisites must name every file its recipe's m4 run reads, and
+  a touch-and-rebuild probe belongs in any tape that adds a template.
+- **Checks that bypass the cache cannot see a cache bug** (Outie/Gemini
+  finding, 2026-10-22; evidence `eaa0bac`, `findings-outie-publish-learnings.md`
+  L2). Facts: after the `tekii.llc` deploy, `make preview` over `file://`
+  rendered the new footer blink, `curl` of the live `/custom.css` returned
+  the new bytes, and the live page in a returning browser stayed static
+  across plain reloads — `custom.css` was served `max-age=31536000,
+  immutable` under an unfingerprinted name while the HTML was `no-store`.
+  Only a browser that had visited before could observe it. Interpretation,
+  separated: a verification surface that does not share the user's path
+  (here: the browser cache) is a vacuous check of the vacuous-check class —
+  the evidence base is present but not the user's. `immutable` belongs
+  only on content-hashed or frozen names; the decision between `no-store`,
+  `must-revalidate` and fingerprinting is registered in the consumer.
+- **Cross-model draft and review: the review adds second-order checks but
+  inherits the draft's self-description** (model findings from both
+  sides, 2026-10-22; evidence `draft-host-publish-fixes.md` (consumed),
+  `f149012`, `eaa0bac`, `findings-outie-publish-learnings.md` L1). Facts:
+  the Gemini Outie's first draft was right on both fixes and applied
+  without mechanical deviation; the Claude Outie's review added eight
+  amendments (why `||` cannot mask a deny; the `no-store` cost on the
+  vendored stylesheet; restore-before-integrate ordering; a C-6 naming
+  step; a "model finding" label; two commits; two precision nits; the
+  reviewer in the attribution), all accepted and all followed by the
+  Innie. Neither model probed the drafting model's identity against the
+  repo record — three prior commits say `Gemini 4 Argon` — so `Gemini 3.1
+  Pro` shipped in two unpushed trailers; the drafter later stated the name
+  came from its priors. The drafter's own account of the review renumbered
+  the amendments and misattributed two (credited the reviewer with a
+  pre-existing diff step; cited a `generator_test.m4:290` anchor the review
+  never wrote). Interpretation, separated: the review's value was
+  consequence-and-boundary questions the firefighting author did not ask;
+  its blind spot was everything it took as given from the draft — identity
+  is state, and "state is probed" applies to who you are. A reviewed
+  party's summary of its review is a claim, not a record; the record is
+  the tape and the trailers.
+- **First single-writer exception, and a tape condition the applier could
+  not verify** (Devon-authorized, 2026-10-22; evidence
+  `draft-host-publish-fixes.md` Trigger 3, `findings-host-publish-fixes.md`
+  §3). Facts: Devon authorized the reviewing Outie to edit the drafting
+  Outie's tape in place ("outie is autorized to modify the tape itself");
+  the edit was recorded as a third `Trigger:` line and a "Reviewed by"
+  header line. The amended tape then carried a condition — "Gemini
+  re-reviews the amended tape before Innie applies it" — that the Innie
+  could not verify from its seat; Devon's "continue" overrode it, which the
+  Innie reported rather than assumed. Interpretation, separated: the
+  single-writer rule survived its first exception because the exception
+  was triggered, dated and visible in the header — a candidate SPEC clause
+  (reviewer edits under a named trigger, with a reviewer line). And a tape
+  condition naming an act outside the applier's view is not a check: either
+  the user attests it in the tape or it is not written as a condition.
 
 ## Backfill (pending)
 
