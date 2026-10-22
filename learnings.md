@@ -506,6 +506,114 @@ the RECORD.
   per-milestone interviews alone. Per the register's own framing, the
   gap is data, not failure.
 
+- **Argument collection swallows diverted text — a proof that tests a
+  stand-in, not the real macro, is "design-verified only" in disguise**
+  (model finding, 2026-10-21; evidence: the consumer's
+  `findings-html-comments.md` v1 hand-back, `e797bee`). Facts: a tape
+  moved a live `__DASSET` call out of an HTML comment as
+  `m4_ignore(__DASSET(...))dnl`, claiming the unquoted argument would run
+  the call's side effect (a Make rule written into a diversion) and drop
+  only its return value; the author's scratchpad proof had exercised
+  `m4_ignore` on a comment block and on a plain macro, never on a macro
+  that *emits text into a diversion*; the applier's gate found the font
+  missing on all four domains with `make test` green; root cause: text a
+  macro produces while m4 is *collecting an argument* becomes part of that
+  argument regardless of the active diversion, so the rule lines were
+  discarded with the href (reproduced on the host with a three-line
+  macro); the fix wraps the bare call in a `KILL` push/pop. Interpretations,
+  separated: (1) the refusal-cycle candidate's "design-verified only" smell
+  has a subtler form — *empirically verified on the wrong subject*; a
+  proof must exercise the real macro's side-effect class, not a stand-in
+  that shares only its shape; (2) silent loss through a green gate (Entry
+  4's lineage): the artifact the side effect produces — the file, the rule
+  — must be asserted by the gate, which v2 did; (3) the hand-back protocol
+  ran clean again: isolated reproduction, root cause, proven alternative,
+  worktree parked, no improvisation.
+- **"Succeeded wrongly": exit 0 with truncated output — and the oracle
+  that caught it** (model finding, 2026-10-21; evidence: `strip-css.m4`'s
+  header in `f0d4896`). Facts: building an m4-only CSS comment stripper
+  took four attempts; three failed *silently with exit 0*: m4sugar's
+  helpers break once the quote characters change (their bodies use
+  `[ ]`), each `patsubst` result is rescanned so commas split the next
+  pass's arguments and a `$*` re-quoting helper eats the whitespace after
+  every comma, and the obvious per-character alternation regex overflows
+  m4's regex stack on 80 KB ("m4: stack overflow" on stderr, exit 0,
+  142 bytes out of 79,697). Every attempt was judged by one oracle: byte
+  identity with an independent implementation (a perl one-liner) on the
+  real inputs plus an edge fixture — the driver was accepted only when
+  all three compared identical. The four traps are documented in the
+  shipped file's header; a golden test pins the regex. Interpretations,
+  separated: (1) a fifth verification-failure class beside *skipped*,
+  *broken*, *incomplete*, *vacuous* and *unreachable*: the **wrong-but-
+  green** result — the tool returns success and output, both plausible,
+  neither right; only an oracle independent of the implementation catches
+  it; (2) "two independent implementations agree" is the cheap, strong
+  test for any text transform; (3) trace-notes-on-removal has a sibling:
+  *trace notes on creation* — the failed attempts belong in the artifact
+  they shaped, because the next editor will try them.
+- **The author's count predictions are a recurring defect; the change
+  itself was right** (model finding on the applier's report, 2026-10-22;
+  evidence: `findings-strip-css.md`, cross-ref footer-step1). Facts: of
+  the strip-css tape's gate expectations, three were wrong while every
+  package applied verbatim — a `*/` probe that assumed comment
+  continuation lines start with `*`, a golden diff predicted as "two
+  lines" that was six (one per mock target — the *same* per-target
+  undercount the footer-step1 findings had already reported), and "0
+  added lines" that was 35 whitespace-only lines (the residue of a
+  decision the tape itself recorded). Interpretation, separated: a
+  repeat of a known defect one tape after it was reported is the
+  signal — the author recalled the lesson's existence, not its mechanism
+  (the lane candidate's "principle recalled, mechanism skipped", on the
+  authoring side); guard candidates: state count expectations as *shape*
+  ("every line of kind X gains Y") or compute them from the fixture, and
+  make a prior findings tape's defect list an explicit checklist for the
+  next tape.
+- **Bundling an unrelated decision into a chooser is a pin, mis-shelved**
+  (Devon-caught, 2026-10-22). Facts: the CSS-stripping decision was
+  presented through the choice UI with a third sub-question — ship the
+  licence files into the output — carried over from an earlier legal
+  analysis; it shared the mechanism (`__DASSET`) but not the scope, and
+  the option text did not say that nothing ships today; Devon asked why
+  it was there, then had it pinned. Same day, Devon's standing
+  instruction "if there are multiple options, present them with the
+  proper choice UI" followed a bare "proceed" that the IQC gate had to
+  bounce twice. Interpretation, separated: the chooser is the right tool
+  for selecting *legs* (Rule 1 hygiene — the selection is explicit in
+  one step), and its options must share one decision's scope; an open
+  question from another concern is pinned to a register, never attached
+  as a sub-option.
+- **Template comments are content — the deletion test applies to
+  comments** (model finding, 2026-10-21; evidence: `e797bee`'s gate-7
+  diff). Facts: `layout.html`'s HTML comments shipped on every page, and
+  because m4 does not know HTML comments they shipped *macro-expanded* —
+  a footer note that named `__COPYRIGHT_HREF__` arrived in the built page
+  as the sister site's URL; one comment deliberately *used* this to hide a
+  live `__DASSET` call's return value. The fix (per-line `dnl`, multi-line
+  `m4_ignore([<!-- … -->])dnl`, bang comments `<!--! … -->` for the one
+  attribution that must ship) is now a convention. Interpretation,
+  separated: in a template language a comment is inert only if the
+  template discards it; "what would ship if the other reader did not
+  exist" is Rule 2's deletion test, and it works for comments too. The
+  browser-side corollary found the same day: a lazily-loaded web font is
+  requested only where some rendered element uses it, so "is the font
+  shipping" is an on-disk question, not a viewport question.
+- **Comprehension interview on the five candidates above** (2026-10-22,
+  in-session, five multiple-choice questions, no lookup). Results, as
+  data: *user-verified* — the argument-collection mechanism behind the
+  `m4_ignore` loss (Q1) and the inventory of surviving comments with
+  their reasons (Q4). *Missed* — why the stripper carries one quote level
+  per pass (Q2: Devon gave the reason for choosing guillemets, not for
+  the count), which failures the green gate did not see (Q3: "none"), and
+  the per-target undercount flagged as a repeat (Q5: "didn't catch this
+  one"). Interpretation, separated: the two mechanisms Devon retained are
+  the ones he had asked to have explained in session ("explain m4_ignore
+  vs KILL with examples", "which comments are left and why"); the three
+  missed were reported once inside dense findings read-backs. Supports
+  the first-use candidate's claim that comprehension forms at a
+  deliberate explanation, not at exposure — and suggests read-backs
+  should end with the one line the human is expected to keep.
+  Re-explanations given in session the same day.
+
 ## Backfill (pending)
 
 A reconstruction pass over the first consumer's git history and
