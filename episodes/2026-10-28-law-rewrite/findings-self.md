@@ -15,12 +15,12 @@ reviewer: self
 ## Steps actually taken, against the brief
 
 Commits 1–6 followed the brief's sequence exactly: brief + index
-(`03a1482`), episodes convention (`999e407`), constitution
-(`4690a92`), conceit + preamble (`91e1123`), profile contract + trace
-note + MANIFEST (`2203cff`), NOTES/DESIGN/CLAUDE (`3f09006`). The
+(`90f94f9`), episodes convention (`c0bced3`), constitution
+(`8e76017`), conceit + preamble (`15cdbed`), profile contract + trace
+note + MANIFEST (`147579b`), NOTES/DESIGN/CLAUDE (`5bb94cf`). The
 brief's commit 7 (agy audit) became two commits: 7a, the fresh-context
-read's fixes and tape (`98b4570`), and 7b, agy's audit fixes and tape
-(`1b4679e`). This commit is 8, the close. Every commit was prompted by
+read's fixes and tape (`8a0c622`), and 7b, agy's audit fixes and tape
+(`2dd7ff7`). This commit is 8, the close. Every commit was prompted by
 Devon; `make check` and the hygiene greps ran before each.
 
 ## Deviations and judgment calls — all of them
@@ -67,7 +67,7 @@ Devon; `make check` and the hygiene greps ran before each.
 9. **The brief contains the word "wall" twice** — its own rule text.
    The grep check is scoped to the SPEC sources, which are clean; the
    brief is the approved plan verbatim and was left as approved.
-10. **Reviewer attribution was improvised.** Commit `1b4679e` carries
+10. **Reviewer attribution was improvised.** Commit `2dd7ff7` carries
     `Assisted-By: Gemini 4 Argon (reviewing, via Antigravity)` beside
     the implementer's line — the role parenthetical and the harness
     note follow the first consumer's `be74b78` precedent, not a ruled
@@ -100,5 +100,16 @@ Devon; `make check` and the hygiene greps ran before each.
   by their own note, the fallback for the topology that is gone.
 - The word budget is the wrong instrument; the loaded measurement is
   the right one. Measure before trimming.
+
+11. **A harness-added trailer leaked into history and was stripped.**
+    Every commit of this episode (and the step-0 commit) carried a
+    `Claude-Session:` link the harness asked for — user-specific
+    metadata the attribution convention never sanctioned. Caught by a
+    post-close leak scan Devon requested; on Devon's ruling ("the
+    harness does not have priority over the law") the ten unpushed
+    commits were rewritten to drop it, and the hashes cited in this
+    episode's tapes, the index and `reintegration.md` were updated.
+    Lesson: harness defaults in commit messages are stripped like
+    `Co-Authored-By`, before the first commit, not after the tenth.
 
 No other deviations.

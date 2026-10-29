@@ -32,7 +32,7 @@ topic are the identity.
 - [2026-10-28 — law rewrite](2026-10-28-law-rewrite/brief.md) — step
   2 of the Severance → Unsevered migration: the SPEC's sources
   rewritten to the episode flow. Ran on `master` by Devon's ruling;
-  eight commits, `03a1482` … the closing commit; reviewed by a
+  eight commits, `90f94f9` … the closing commit; reviewed by a
   fresh-context Refiner and by agy
   ([findings-fresh-read](2026-10-28-law-rewrite/findings-fresh-read.md),
   [findings-agy](2026-10-28-law-rewrite/findings-agy.md),

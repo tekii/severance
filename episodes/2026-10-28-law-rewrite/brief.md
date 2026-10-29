@@ -12,9 +12,14 @@ status: merged
 
 # Law rewrite — Severance → Unsevered (step 2 of the migration)
 
+*Note added at close: the commit hash cited below was updated after
+the episode's unpushed commits were rewritten on Devon's ruling to
+drop a harness-added session-link trailer; the plan text is otherwise
+as approved.*
+
 ## Context
 
-`reintegration.md` (committed `5718a80`) records the migration's
+`reintegration.md` (committed `fbcffce`) records the migration's
 decisions. This episode turns them into law: the SPEC's sources are
 rewritten so a consumer session, in any lane and either harness, obeys
 the episode flow instead of the outer/inner handoff. Devon's rulings

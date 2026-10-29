@@ -14,13 +14,18 @@ reviewer: agy
 it (episodes convention). Two edits besides the frontmatter model
 line: absolute paths in "Files opened" made repo-relative (path-hygiene
 convention), and the four-space indentation of the relay removed.
-Mark's verification of each finding follows the auditor's text.*
+Mark's verification of each finding follows the auditor's text. Later
+the same day, on Devon's ruling, the ten unpushed commits of this
+episode were rewritten to drop a harness-added session-link trailer
+from their messages; the commit hashes quoted in this tape were
+updated to the rewritten ones (the auditor cited `98b4570`, now
+`8a0c622`).*
 
 # Findings
 
 ## Summary
 Overall verdict: **pass with should-fix adjustments (0 blocking, 8 should-fix, 2 nit).**
-The rewritten SPEC sources (`preamble.md`, `constitution.md`, `conventions/episodes.md`, `profile-contract.md`) at `HEAD` (`98b4570`) faithfully implement the Unsevered episode architecture, the eight rules, the conceit vocabulary, and the retired-machinery trace in `severed-era.md`.
+The rewritten SPEC sources (`preamble.md`, `constitution.md`, `conventions/episodes.md`, `profile-contract.md`) at `HEAD` (`8a0c622`) faithfully implement the Unsevered episode architecture, the eight rules, the conceit vocabulary, and the retired-machinery trace in `severed-era.md`.
 The remaining issues are internal edge-case inconsistencies (`status` on interrupted findings, multi-author `findings-<author>.md` naming, non-committing reviewer mechanics), one `v0.3.1` C-6 obligation claimed as surviving in `severed-era.md` but absent from the law, two Claude Code-only probes stated as general harness facts, and three operational gaps a cold consumer session would hit when writing `profile.md` or running an episode branch.
 
 ## Findings
@@ -30,7 +35,7 @@ The remaining issues are internal edge-case inconsistencies (`status` on interru
 > `- Token budget: wc -w of [spec] sources before vs after; must not`
 > `  grow (target: shrink — retired sections outweigh added ones).`
 
-The `[spec]` sources listed in `MANIFEST` grew from `3,878` words at `v0.3.1` to `4,675` words at `HEAD` (`98b4570`), a 20.6% increase that fails the brief's stated acceptance check (`must not grow`), and `reintegration.md:228` still records the earlier `4,575` word count prior to commit `98b4570`.
+The `[spec]` sources listed in `MANIFEST` grew from `3,878` words at `v0.3.1` to `4,675` words at `HEAD` (`8a0c622`), a 20.6% increase that fails the brief's stated acceptance check (`must not grow`), and `reintegration.md:228` still records the earlier `4,575` word count prior to commit `8a0c622`.
 Record this word-count growth (`3,878` → `4,675` words) and the rationale for accepting it under `DESIGN.md:150`'s `≤ ~9k` token budget in the episode's self-assessment, and update `reintegration.md:228` to match the final word count.
 
 ### F2 — should-fix — `episodes/2026-10-28-law-rewrite/brief.md:78-80` and `constitution.md:102-125` — VERIFIED
@@ -205,7 +210,7 @@ In `profile-contract.md:35-41`, add how/where the gate is run on the merge candi
 # Mark's verification (Rule 6)
 
 Every cited line was checked against the file by `grep -n` on the
-quoted text (2026-10-28, commit `98b4570`): **all ten citations
+quoted text (2026-10-28, commit `8a0c622`): **all ten citations
 hold** — F1 brief:140 and reintegration.md:228; F2 brief:78 and
 `first-parent` absent from the constitution; F3 episodes.md:37 and
 :93; F4 episodes.md:68, constitution.md:182, profile-contract.md:47;
