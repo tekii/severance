@@ -718,6 +718,79 @@ the RECORD.
   condition naming an act outside the applier's view is not a check: either
   the user attests it in the tape or it is not written as a condition.
 
+- **A self-reported VERIFIED label is a relayed claim — and so is a
+  model's statement of its own identity** (model finding + Devon
+  correction, 2026-10-28; evidence: the agy capability surveys and
+  `episodes/2026-10-28-law-rewrite/findings-agy.md`). Facts: two
+  read-only self-surveys by the Antigravity session, under an explicit
+  VERIFIED/DOCUMENTED/BELIEVED labeling rule, each contained three
+  "VERIFIED" proof quotes that did not exist in the files cited
+  (mechanism claims held under spot-check; attributed quotes did not);
+  the same session's audit tape self-reported `gemini-3.1-pro-high
+  (Antigravity CLI 2.0.70)` while the model was Gemini 4 Argon and the
+  CLI 1.4.9. Interpretation, separated: a label is a claim about
+  evidence, not evidence; the consumer re-verifies citations against
+  the files and identity against the record (the 2026-10-22
+  cross-model candidate's "identity is state", second instance).
+- **A strict evidence rule turned three fabrications into zero**
+  (model finding, 2026-10-28; same evidence). Facts: the audit prompt
+  required every quote to be copied from a file opened in-session with
+  path and line, and VERIFIED only with the quote; all ten findings'
+  citations matched the files by grep. Interpretation, separated: the
+  fabrication was a property of the *instruction*, not of the model —
+  a rule the reviewer can mechanically obey beats a rule it must
+  honour.
+- **A fresh-context read finds what the author cannot** (model
+  finding, 2026-10-28; evidence `findings-fresh-read.md`). Facts: a
+  read-only Refiner given only the four rewritten SPEC sources
+  restated the cast and the eight-step flow correctly and reported six
+  inconsistencies (push vs Rule 4, draft vs Rule 1, two authors in one
+  single-writer tape, …) and six undefined terms — all real, none
+  visible to the author across seven commits. Interpretation,
+  separated: the first-use comprehension check works on the *text*
+  before it works on the human; a cold read is the cheapest review and
+  should precede the cross-model one.
+- **Policing replaced by capability removal** (the reintegration,
+  2026-10-28; evidence `severed-era.md`, the first consumer's
+  `parallel-agent-worktrees.md`). Facts: every retired guard of the
+  first workflow (HEAD-move hooks, the mount precondition, the Makefile
+  refusal, the container's permission workaround) existed because two
+  sessions shared one working tree; the consumer's own note had named
+  "own clone" as the stronger option the hooks were the fallback for;
+  giving each lane its own clone was verified feasible (devcontainer
+  volume clone, 2026-10-28). Interpretation, separated: a guard that
+  detects a violation is the fallback for a boundary that cannot be
+  built; when the boundary can be built, build it and retire the
+  guard with a trace note.
+- **Two harness facts the law now rests on** (model findings,
+  2026-10-28; evidence the experiment log in `reintegration.md`).
+  Facts: in Claude Code, a worktree-isolated Refiner is stopped from
+  aiming *git* at the main checkout by a textual check on the command
+  string, while a plain file write into the main checkout succeeds —
+  in the sandboxed local lane and the cloud VM alike; Refiners branch
+  from `origin/<default>` by default and could not see four unpushed
+  local commits. Side datum: the Antigravity CLI self-updated at
+  launch, so its surveys were produced by 1.4.8 while 1.4.9 sat on
+  disk. Interpretation, separated: isolation is a git boundary, not a
+  write boundary — the brief must say "write only under your
+  worktree"; `baseRef: "head"` is a setting, not advice; and the
+  tool's build is part of the evidence it produced.
+- **The harness has no priority over the law** (Devon ruling,
+  2026-10-28; evidence commit `13fcac7` and the widened attribution
+  convention). Facts: ten commits carried a harness-proposed
+  `Claude-Session:` link trailer the convention never sanctioned;
+  caught by a post-close leak scan, stripped by history rewrite before
+  the push, hashes remapped in the episode's tapes. Interpretation,
+  separated: a harness default in a commit message is `Co-Authored-By`
+  in a new costume — stripped before the first commit, not after the
+  tenth; the convention now says so.
+- **The word budget is the wrong instrument** (model finding,
+  2026-10-28; *hold until the loaded measurement*). Facts: the law
+  rewrite's brief set "must not grow" on `wc -w`; the SPEC sources grew
+  3,878 → 4,985 words while the design's own yardstick is loaded
+  tokens (≤ ~9k; v0.1.0 calibration 4.6k words → 8.2k). Interpretation,
+  separated, pending: measure before trimming.
+
 ## Backfill (pending)
 
 A reconstruction pass over the first consumer's git history and

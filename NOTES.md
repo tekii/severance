@@ -59,6 +59,31 @@ replaced by one-line pointers when they do.
   audit's finding F6.
 
 ## Open items
+- **Register rulings — deferred by Devon (2026-10-28), with a
+  consolidation proposed.** 34 candidates pend (27 in the register's
+  Candidates section before 2026-10-28, 7 added that day). Proposed
+  shape, for Devon's ruling when he takes it up — seven entries:
+  *Entry 11* the verification-failure taxonomy completed (vacuous,
+  unreachable, wrong-but-green; the error message is not the error;
+  checks that bypass the cache; untested build-graph edges; vendored
+  links; comments shipped through a green gate); *Entry 12* rules
+  over-reach and collide at birth (over-generalization, the lane
+  names the route, role inversion, count predictions, bundled
+  decisions, colliding conventions); *Entry 13* isolation as physics
+  (ephemerality, hardening layers collide, the sandbox closes C-6,
+  the scoped key, shared external state, harness config read at
+  start, policing replaced by capability removal); *Entry 14*
+  visibility engineered for the human (prompts render where nobody
+  looks, capture is the gate); *Entry 15* comprehension forms at
+  first use and deliberate explanation (never-executed clause, the
+  interview results, the fresh-context read); *Entry 16*
+  "design-verified only" and the refusal cycle; *Entry 17* the other
+  model — independence is worth what you verify (cross-model review,
+  the single-writer exception, VERIFIED and identity as relayed
+  claims, the strict evidence rule, harness facts, the harness has no
+  priority over the law). *Hold:* the word budget. Weakest merges to
+  question: comments→11, bundled decisions→12, harness config→13.
+  Comprehension interviews on Devon's trigger.
 - **Lesson → convention graduation hierarchy** (Devon's future ask, his
   trigger): document how register entries (case-law) graduate into
   binding conventions (law); precedent: Entry 2 → the constitution's
