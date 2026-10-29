@@ -11,6 +11,8 @@ release:
 	@echo "release: artifacts rebuilt (version $$(cat VERSION))"
 
 check:
+	@sh lint-frontmatter.sh $$(find . -path './.*' -prune -o -name '*.md' ! -name SEVERANCE.md ! -name RECORD.md -print) || \
+	    { echo "check: frontmatter above would not parse as YAML"; exit 1; }
 	@TMP=$$(mktemp -d) && trap 'rm -rf "$$TMP"' EXIT && \
 	sh build.sh "$$TMP" && \
 	status=0 && \

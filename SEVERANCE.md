@@ -1,11 +1,11 @@
 ---
 type: Convention
-title: SEVERANCE — the Unsevered workflow (SPEC)
-description: The Severance workflow's binding law in its Unsevered form — constitution, the episodes convention and the other conventions, profile contract — amalgamated at v1.0.0. Vendored copy: do not edit; update by re-vendoring a release.
+title: "SEVERANCE — the Unsevered workflow (SPEC)"
+description: "The Severance workflow's binding law in its Unsevered form — constitution, the episodes convention and the other conventions, profile contract — amalgamated at v1.0.1. Vendored copy: do not edit; update by re-vendoring a release."
 tags: [severance, spec, workflow, vendored]
-timestamp: 2026-10-28
-version: 1.0.0
-built-from: v1.0.0
+timestamp: 2026-10-29
+version: 1.0.1
+built-from: v1.0.1
 ---
 
 <!-- ═══ source: preamble.md ═══ -->
@@ -346,6 +346,13 @@ branch:       the episode branch (or the main branch, in a plain lane)
 status:       draft | pending | merged      (briefs only)
 reviewer:     who reviewed — a Refiner, a session, another model   (findings only)
 ```
+
+The frontmatter must parse: a value that contains `: ` or ` #`, or
+that begins with a quote or another YAML indicator, is written as one
+double-quoted scalar with inner `"` escaped as `\"` — a `trigger` is
+usually such a value (`trigger: "\"do X\" (Devon, 2026-10-28)"`). An
+unquoted `: ` reads as a nested mapping and the tape fails to render
+wherever it is vendored.
 
 Single writer: each tape has one author; a reply is a new tape. A
 tape lacking a valid `trigger` is a violation — the next session must

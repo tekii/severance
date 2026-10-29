@@ -5,7 +5,7 @@ description: Read-only cross-model audit of preamble.md, constitution.md, conven
 timestamp: 2026-10-28
 session: agy (Antigravity CLI, native Linux lane), read-only audit
 model: Gemini 4 Argon — corrected by Devon; the auditor self-reported "gemini-3.1-pro-high (Antigravity CLI 2.0.70)" from training data (the CLI on disk is 1.4.9 by Mark's check)
-trigger: "You are the AUDITOR for one episode of this repo. Read-only: do not create, edit, commit or push anything in the repository; run no build. […] SUBJECT. The repo's SPEC sources were rewritten today from the first workflow (tag v0.3.1) to its successor. Review: preamble.md, constitution.md, conventions/episodes.md, profile-contract.md against their previous versions" (Devon, relaying Mark's audit prompt, 2026-10-28)
+trigger: "\"You are the AUDITOR for one episode of this repo. Read-only: do not create, edit, commit or push anything in the repository; run no build. […] SUBJECT. The repo's SPEC sources were rewritten today from the first workflow (tag v0.3.1) to its successor. Review: preamble.md, constitution.md, conventions/episodes.md, profile-contract.md against their previous versions\" (Devon, relaying Mark's audit prompt, 2026-10-28)"
 branch: master
 reviewer: agy
 ---

@@ -5,7 +5,7 @@ description: The approved plan for rewriting the SPEC's sources from the outer/i
 timestamp: 2026-10-28
 session: bare-local lane, Claude Code (the session named "the reintegration")
 model: claude-fable-5-1
-trigger: "let's start step 2, the law rewrite" (Devon, 2026-10-28); plan approved in plan mode the same day with two rulings — commits on master; fold NOTES candidates 1 and 2, leave 3 open
+trigger: "\"let's start step 2, the law rewrite\" (Devon, 2026-10-28); plan approved in plan mode the same day with two rulings — commits on master; fold NOTES candidates 1 and 2, leave 3 open"
 branch: master (Devon's ruling — the plain lane; no episode branch, no merge commit)
 status: merged
 ---

@@ -22,9 +22,14 @@ section() {
 # frontmatter TYPE TITLE DESCRIPTION TAGS — OKF-conformant (type is the
 # field OKF requires; title/description/tags/timestamp keep the artifact
 # a valid citizen of consumers' OKF trees) + the release pin fields.
+# title and description are free prose, so they are emitted as
+# double-quoted YAML scalars with inner `\` and `"` escaped: an unquoted
+# ": " in the v1.0.0 description made the artifact unparseable in the
+# first consumer. lint-frontmatter.sh re-checks every artifact written.
+dq() { printf '%s\n' "$1" | sed 's/\\/\\\\/g; s/"/\\"/g'; }
 frontmatter() {
-    printf -- '---\ntype: %s\ntitle: %s\ndescription: %s\ntags: %s\ntimestamp: %s\nversion: %s\nbuilt-from: v%s\n---\n' \
-        "$1" "$2" "$3" "$4" "$DATE" "$VERSION" "$VERSION"
+    printf -- '---\ntype: %s\ntitle: "%s"\ndescription: "%s"\ntags: %s\ntimestamp: %s\nversion: %s\nbuilt-from: v%s\n---\n' \
+        "$1" "$(dq "$2")" "$(dq "$3")" "$4" "$DATE" "$VERSION" "$VERSION"
 }
 
 {
@@ -46,6 +51,7 @@ frontmatter() {
         done
     fi
 } > "$OUT/SEVERANCE.md"
+sh lint-frontmatter.sh "$OUT/SEVERANCE.md"
 
 REC=$(section record)
 if [ -n "$REC" ]; then
@@ -59,4 +65,5 @@ if [ -n "$REC" ]; then
             cat "$f"
         done
     } > "$OUT/RECORD.md"
+    sh lint-frontmatter.sh "$OUT/RECORD.md"
 fi

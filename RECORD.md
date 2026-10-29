@@ -1,11 +1,11 @@
 ---
 type: Reference
-title: SEVERANCE — experiment record (RECORD)
-description: The Severance experiment's narrative record — conceit, prior art, learnings register, the reintegration (Severance → Unsevered) and the trace of the retired machinery — built at v1.0.0. For human readers; not loaded into sessions.
+title: "SEVERANCE — experiment record (RECORD)"
+description: "The Severance experiment's narrative record — conceit, prior art, learnings register, the reintegration (Severance → Unsevered) and the trace of the retired machinery — built at v1.0.1. For human readers; not loaded into sessions."
 tags: [severance, record, experiment]
-timestamp: 2026-10-28
-version: 1.0.0
-built-from: v1.0.0
+timestamp: 2026-10-29
+version: 1.0.1
+built-from: v1.0.1
 ---
 
 <!-- ═══ source: conceit.md ═══ -->

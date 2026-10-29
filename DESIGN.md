@@ -93,8 +93,12 @@ history.md
 
 Order is meaning (the artifact reads top-down); presence is scope (an
 unlisted file ships nowhere); `make check` verifies listed files exist,
-asset blocks match sources, and the committed artifacts equal a fresh
-rebuild (a check that can actually fail — see Teppan learnings Entry 4).
+asset blocks match sources, every frontmatter block in the tree would
+parse as YAML (`lint-frontmatter.sh`, POSIX awk — the build quotes the
+prose fields it emits, and the first consumer's previewer refused the
+v1.0.0 artifact over an unquoted ": "), and the committed artifacts
+equal a fresh rebuild (a check that can actually fail — see Teppan
+learnings Entry 4).
 
 ## Release mechanism
 

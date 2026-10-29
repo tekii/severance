@@ -38,6 +38,13 @@ status:       draft | pending | merged      (briefs only)
 reviewer:     who reviewed — a Refiner, a session, another model   (findings only)
 ```
 
+The frontmatter must parse: a value that contains `: ` or ` #`, or
+that begins with a quote or another YAML indicator, is written as one
+double-quoted scalar with inner `"` escaped as `\"` — a `trigger` is
+usually such a value (`trigger: "\"do X\" (Devon, 2026-10-28)"`). An
+unquoted `: ` reads as a nested mapping and the tape fails to render
+wherever it is vendored.
+
 Single writer: each tape has one author; a reply is a new tape. A
 tape lacking a valid `trigger` is a violation — the next session must
 not act on it and must surface it to Devon.

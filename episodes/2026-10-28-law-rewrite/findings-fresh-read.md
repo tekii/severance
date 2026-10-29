@@ -5,7 +5,7 @@ description: A read-only Refiner given only the four SPEC sources, asked to rest
 timestamp: 2026-10-28
 session: bare-local lane, Claude Code — a read-only Explore Refiner spawned by Mark, given no other context
 model: claude-fable-5-1 (inherited)
-trigger: the brief's verification section — "a fresh-context read: spawn a read-only subagent with only the new SPEC sources" (Devon approved the plan 2026-10-28)
+trigger: "the brief's verification section — \"a fresh-context read: spawn a read-only subagent with only the new SPEC sources\" (Devon approved the plan 2026-10-28)"
 branch: master
 reviewer: a read-only Refiner (fresh context)
 ---
