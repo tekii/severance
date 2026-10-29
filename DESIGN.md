@@ -16,6 +16,16 @@ experiment that produced it. Teppan is the first consumer. The eventual
 goal is public presentation (experiment / paper), with this repo as the
 publishable artifact.
 
+**2026-10-28 — superseded in part.** The workflow's second form,
+**Unsevered**, replaced the host/container split with lanes that each
+hold their own clone, and the handoff channel with episodes recorded
+in the repo; the cast is now Devon, Mark and Refiners. The design
+record is `reintegration.md`; the retired mechanics are traced in
+`severed-era.md`. The packaging and release design below is
+unchanged. Constraint 2 still holds in its plain reading: this repo is
+worked on in a single-session lane with no consumer machinery — and
+now that no lane has a role split, nothing about it is special.
+
 ## Constraints (facts, not preferences)
 
 1. **Consumers must be self-sufficient from a single clone.** Cloud

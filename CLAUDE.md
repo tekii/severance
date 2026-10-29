@@ -1,7 +1,7 @@
 # tekii/severance — the Severance workflow experiment's home repo
 
 This repo runs a **plain single-session lane** (mostly Claude Code web):
-no container, no Innie, no severed counterpart here (DESIGN.md,
+no container, no role split, no consumer machinery (DESIGN.md,
 constraint 2). Safety is **boundaries, not severance**: commit or tag
 only when the user prompts it; never push without an explicit ask.
 
@@ -47,21 +47,20 @@ GNU Make + POSIX shell only. Do not add dependencies.
 ## The law here is cargo, not law
 
 `constitution.md` and `conventions/` are **sources** of the law that
-binds *consumer* projects' sessions (tapes, `.handoff/`, Outie/Innie
-lanes, the consumer's test gate). None of that machinery exists in
-this repo: do not look for `.handoff/`, do not treat yourself as an
-Outie or Innie, do not expect tapes to edit these files — here they
-are text you maintain. ("The gate" here means `make check`, not a
-consumer's test suite; this repo is the vendor, so it has no
-`profile.md`.) Rules this repo **does** self-apply: attribution and
+binds *consumer* projects' sessions (episode branches, Refiners, the
+consumer's test gate). Here the law is text you maintain: this repo
+is the vendor, has no `profile.md`, and commits on `master` by Devon's
+ruling — "the gate" here means `make check`, not a consumer's test
+suite. The one piece of the machinery this repo does keep is
+`episodes/`: its own briefs and findings, by the episodes convention. Rules this repo **does** self-apply: attribution and
 path hygiene (above), the learnings-register discipline (the register
 lives here), trace-notes thinking for design-bearing removals (via
 NOTES.md/DESIGN.md), and the conceit's anti-overstretch + casing rules
 in all prose.
 
-**No Devon here, no Outie either.** The cast names belong to the
-consumer workflow's story; in this repo the user is simply the user
-and a session is simply a session. `Assisted-By:` lines name the
+**No cast roles in attribution.** In prose the cast is the workflow's
+(Devon, Mark, Refiners); in this repo the user is simply the user and
+a session is simply a session. `Assisted-By:` lines name the
 **model**, never a cast role — write
 `Assisted-By: Claude (claude-<model-id>)`. (Historical commits signed
 "(Outie, …)" date from the extraction period, when the first
@@ -75,6 +74,8 @@ artifact of that period, not a pattern to follow.)
 + [conventions/](conventions/) — the binding law's sources.
 [profile-contract.md](profile-contract.md) — what every consumer answers.
 [learnings.md](learnings.md) — the experiment's register. [NOTES.md](NOTES.md)
-— open items. Cast: **Devon** = the user, **Outie** = outer session,
-**Innie** = container session, **Refiners** = spawned agents (these name
-the *consumer* workflow's roles — this repo itself runs the plain lane).
+— open items. [reintegration.md](reintegration.md) — the migration
+record; [severed-era.md](severed-era.md) — the retired mechanics;
+[episodes/](episodes/index.md) — this repo's briefs and findings.
+Cast: **Devon** = the user, **Mark** = the main session across
+sessions, **Refiners** = spawned agents.

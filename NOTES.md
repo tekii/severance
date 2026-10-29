@@ -39,6 +39,20 @@ replaced by one-line pointers when they do.
   Entry 7, vendor-neutral; harness mechanics stay in consumer
   profiles).
 
+## Graduated (next release — the reintegration, 2026-10-28)
+
+- **No experiments in the shared working tree** → constitution.md
+  Rule 7 (Devon's ruling at the law-rewrite plan).
+- **Mandatory self-assessment on every tape application** →
+  constitution.md "Self-assessment before hand-back" (same ruling).
+- **Sandbox for the Outie** → resolved by the lane model: the bare
+  host is one lane with the per-command sandbox as its boundary;
+  per-lane boundaries are the profile's business (profile-contract
+  "Lanes"; `reintegration.md`).
+- **Who updates the vendored package in consumers** → resolved: any
+  lane vendors (every lane has its own clone); no tape ceremony; Rule 4
+  governs the push.
+
 ## Open items
 
 - **SPEC graduation candidate (v0.2.x): the auto-load ritual** — the
@@ -56,58 +70,15 @@ replaced by one-line pointers when they do.
   (container config, fleet scripts, guards) still lives, ungeneralized,
   in the first consumer's repo. Generalizing it into `[spec.assets]`
   extractable blocks is future work — likely v0.2.x.
-- **Who updates the vendored package in consumers** (Devon,
-  post-migration review): today's topology forces outer-carries /
-  inner-lands; revisit whether tape ceremony stays proportionate for
-  hash-guarded version bumps — and note the answer changes for
-  container-less consumers.
 - **"Report-back by exception"** — discussed and deliberately left
   unadopted (Devon self-tracks); silence-must-be-a-contract caveat
   recorded in the session that raised it.
-- **Sandbox for the Outie — evaluate the merits** (Devon's trigger,
-  2026-07-11). The vendor repo's local lane now runs a strict kernel
-  sandbox (layer-2: bubblewrap wall, no unsandboxed escape, hard-denied
-  escalation — config in untracked `settings.local.json`; prerequisite:
-  an AppArmor `userns` profile for bwrap on Ubuntu ≥23.10). In
-  consumers, the Innie has the container but the *Outie runs bare on
-  the host* — the same layer-2 profile could give the outer lane a
-  machine wall without container ceremony, and its `/dev/null`
-  config-masking closes C-6 mechanically (see register candidates,
-  2026-07-11). Evaluate: interaction with the Outie's read-only duties
-  (probing, drafting — all compatible with a read-open/write-closed
-  wall), the `.handoff/` write path (must remain writable — it's
-  workspace-internal, so it is), and whether the profile graduates
-  into `[spec.assets]` or profile-contract guidance at v0.2.x.
-- **SPEC candidate: no experiments in the shared working tree** (Devon's
-  trigger, 2026-07-24). From the first consumer's `driver.m4` incident
-  (2026-07-23): an Outie prototype command chain whose `mkdir && cd`
-  failed silently dropped its follow-on heredoc writes into the repo
-  root — overwriting a **pre-existing untracked file** (unrecoverable:
-  untracked means no git history; shell redirection has no
-  read-before-write guard). Proposed clause (natural home: beside C-5's
-  shared-working-tree bullet): sessions never use the shared tree as an
-  experiment workbench — scratch/prototypes go to session-private
-  storage via **absolute paths**; file-writing steps must not depend on
-  an earlier `cd` having succeeded (a statement after a heredoc is
-  outside the `&&` chain — the resist-collapse family's cwd footnote,
-  seen from the write side); probe any write target that could land in
-  the tree. Incident + rule = learnings-register candidate pair
-  (interim home: the Outie's private memory, per session-memory rules —
-  pointer only).
-- **SPEC candidate: mandatory Innie self-assessment on every tape
-  application** (Devon's requirement, 2026-07-24). Proposed as inner
-  apply rule 9: after applying a tape — before hand-back or commit —
-  the applying session **re-walks the steps it actually took** against
-  the SPEC, the consumer profile, and the consumer's committed
-  conventions, and **reports the result explicitly**: every deviation,
-  apply-time judgment, improvisation, or latitude exercised — and "no
-  deviations" stated, never implied. The report travels in the
-  findings tape (refusals) or the apply report-back (successes).
-  Precedent observed in the wild twice: the firebase-publish refusal
-  (2026-07-23) voluntarily disclosed its apply-time judgments
-  (assertion re-authoring, preserved coverage), and the 2026-07-13
-  off-process incident's six-cause self-diagnosis — this codifies the
-  behavior so it stops depending on the applier's disposition.
+- **No experiments in the shared tree** and **mandatory
+  self-assessment** → graduated (block above). Their incident
+  evidence — the first consumer's `driver.m4` overwrite of an
+  untracked file (2026-07-23) and the two voluntary self-disclosures
+  (2026-07-13, 2026-07-23) — remains the learnings-register candidate
+  pair.
 - **SPEC candidate: attribution beyond the dual lines — reviewers,
   non-cast participants, and Devon's reshuffle idea** (Devon's trigger,
   2026-07-24). Precedent: the first consumer's `be74b78` carries three
