@@ -7,28 +7,48 @@ sections:
 
 ## Gate
 
-The command(s) that every integration must pass, with explicit pass
-criteria (e.g. Cold Harbor: `make test` — N assertions, 0 FAIL). The
-constitution's sanctioned flow refuses to merge anything that has not
-passed the gate.
+The command(s) every integration must pass, with explicit pass
+criteria (e.g. Cold Harbor: `make test` — every assertion PASS, 0
+FAIL). Mark runs it on the exact merge candidate; nothing merges
+without it.
 
-## Hygiene preconditions
+## Lanes
 
-Checks that MUST hold before build/test commands run on the main
-checkout, each with its failure action (STOP and hand back). (E.g. Cold
-Harbor: a mount probe proving the build volume is present, so a
-mis-mounted checkout cannot poison paths.)
+One entry per lane the project is worked on from. Each names:
 
-## Sanctioned flow
+- **the boundary** — what stops a session mechanically (a cloud VM, a
+  container with its own clone, a per-command sandbox on a host);
+- **the reach** — what only this lane can do (credentials, a browser,
+  publishing, another model);
+- **how Rule 4 is enforced** there (an ask-rule on push, a sandbox
+  approval, the law alone, a forwarded credential that must not be
+  used without the ask);
+- **the harness profile** — the file the harness auto-loads this law
+  from (`CLAUDE.md`, `AGENTS.md`, …), its hook file, and any sandbox
+  grants the lane needs; plus the setting that branches Refiners from
+  the local HEAD where the lane works on a local checkout.
 
-The exact provision → edit → gate → integrate → teardown mechanism for
-landing repo-content, and which lane may run it (typically
-container-gated tooling that fails closed outside the severed floor —
-this is what makes "the outer cannot commit" a mechanism, not a
-politeness).
+Lanes are declaration-only: name them by their technical kind.
+
+## Episode mechanics
+
+Where briefs land (the `episodes/` root is fixed by the convention;
+say what else the project expects in a brief — e.g. the acceptance
+checks it must list); which lane integrates and how (plain merge on
+the main branch, or a plain-lane commit that closes the episode); any
+project-specific preconditions a session must probe before building
+on the main checkout, each with its failure action (STOP and hand
+back).
+
+## Reviewer
+
+Who reviews — a read-only Refiner, a second session, another model —
+and how read-only is enforced for it (tool profile, plan mode, a deny
+rule). If the reviewer cannot commit, say how its findings reach the
+branch (Mark commits them, both attributed).
 
 ## Implementation docs
 
 Where the consumer's own machinery documentation lives (container
-setup, fleet runbooks, environment notes). This law never links
+setup, environment notes, harness configuration). This law never links
 consumer files; the profile is the indirection point.

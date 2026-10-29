@@ -10,6 +10,7 @@
 [spec]
 preamble.md
 constitution.md
+conventions/episodes.md
 conventions/git-commit-attribution.md
 conventions/no-user-specific-paths.md
 conventions/trace-notes-on-removal.md
@@ -23,3 +24,4 @@ conceit.md
 prior-art.md
 learnings.md
 reintegration.md
+severed-era.md

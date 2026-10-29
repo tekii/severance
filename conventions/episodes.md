@@ -77,25 +77,20 @@ else needs to be checked to know work is in flight.
 
 ## Integration: a plain merge, never a squash
 
-Mark merges the branch with a merge commit whose message carries the
-gate result on the exact merge candidate and Devon's authorization.
-**No squash, no fast-forward.** Every commit beneath the merge survives
-with its own author and `Assisted-By:` line; the brief, the work, the
-findings and the fixes keep their order. A Refiner may tidy its own
-work-in-progress inside the branch *before review*; the rule binds the
-integration step only. Then `git log --first-parent master` reads one
-line per episode — the season — and plain `git log` reads the commit
-grain that lets a session argue from facts.
+The merge commit's message carries the gate result on the exact merge
+candidate and Devon's authorization. **No squash, no fast-forward:**
+every commit beneath the merge survives with its own author and
+`Assisted-By:` line, in order. A Refiner may tidy its own
+work-in-progress *before review*; the rule binds the integration step
+only. `git log --first-parent` then reads one line per episode; plain
+`git log` reads the commit grain.
 
 ## Interrupted episodes
 
-Whatever the next Mark would need is **committed on the branch before
-the session ends**: progress notes in the episode directory, partial
-findings with a status, the draft brief. Session memory, transcripts
-and harness plan files are conveniences for the same Mark on the same
-machine; the branch is what the next Mark gets. On ephemeral lanes
-(a cloud VM, a container volume) uncommitted work is lost with the
-lane — commit early, push the branch.
+Progress notes, partial findings with a status, or a draft brief are
+committed on the branch before the session ends (constitution, Rule
+8). On ephemeral lanes uncommitted work dies with the lane — commit
+early, push the branch.
 
 ## Harness settings the convention depends on
 
@@ -109,13 +104,3 @@ lane — commit early, push the branch.
   VM): the harness refuses git commands aimed at the main checkout, but
   a plain file write into it succeeds. Briefs say "write only under
   your worktree"; a consumer may mechanize that with a pre-tool hook.
-
-## Why
-
-Provenance proved its worth in Severance: sessions backed or refuted
-claims from the commit log and the knowledge tree. What that record
-lacked was the per-episode layer — intent, evidence, authorization —
-because it lived in tapes designed to vanish. Keeping the tapes on the
-branch closes the gap with no new mechanism, and gives continuity its
-carrier: the next session reads what the last one left, in the clone,
-in any lane, on any model.
