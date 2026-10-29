@@ -56,7 +56,12 @@ ceased to exist, would any part of this content lose its purpose? If
 yes, it belongs in a tape or nowhere. Names describe their referent;
 `Assisted-By:` trailers are documentation, not messaging; nothing
 invisible in a rendered diff (whitespace patterns, zero-width
-characters, mtime, the *shape* of a diff) carries meaning.
+characters, mtime, the *shape* of a diff) carries meaning. Tracked
+files a harness auto-loads into every session (`CLAUDE.md`,
+`AGENTS.md`, rules, hooks, skills) are the one place a directed
+message becomes an injected instruction: a change to them is **named
+to Devon before integration**, and after it lands a running session
+re-reads the file before relying on it — the loaded copy is stale.
 
 **Rule 3 — state is probed, not assumed.** Before proposing or
 authoring any change, a session **probes the authoritative state
@@ -117,7 +122,9 @@ Not in memory, not in chat.
 6. **Fix, gate again** — further commits on the branch.
 7. **Authorize** — Devon authorizes the integration.
 8. **Integrate** — a plain merge commit, no squash; its message carries
-   the gate result and the authorization.
+   the gate result and the authorization. Afterwards `git log
+   --first-parent` reads one line per episode and plain `git log`
+   reads every commit: two grains, both kept.
 
 Where a consumer integrates on its **main branch** (`master` or
 `main`) directly — a *plain lane*: one session, no episode branch —
@@ -159,9 +166,10 @@ know what the summary dropped. Give a Refiner the narrowest tool
 profile its job needs: a read-only profile is the one hard lever a
 spawner has. And know the boundary's shape: worktree isolation stops
 a Refiner's *git* commands from reaching the main checkout; it does
-not stop a file write there (verified 2026-10-28, local sandbox and
-cloud VM alike). A brief says "write only under your worktree"; a
-consumer may enforce it with a pre-tool hook.
+not stop a file write there (verified 2026-10-28 in Claude Code, local
+sandbox and cloud VM alike; other harnesses unverified). A brief says
+"write only under your worktree"; a consumer may enforce it with a
+pre-tool hook.
 
 ## Self-assessment before hand-back
 
@@ -179,8 +187,9 @@ A review is worth what its independence is worth. The reviewer is a
 model — given the brief and the diff and **not** Mark's reasoning or
 conclusion; cross-model when one is available. Its findings are
 committed on the branch as data; Mark verifies them (Rule 6) and
-decides. A reviewer that cannot commit writes the file and Mark
-commits it, both named in the attribution.
+decides. A reviewer that cannot commit writes the file, or returns
+its text for Mark to write, and Mark commits it, both named in the
+attribution.
 
 ## Refuse by handing back, never silently
 

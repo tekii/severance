@@ -53,15 +53,12 @@ replaced by one-line pointers when they do.
   lane vendors (every lane has its own clone); no tape ceremony; Rule 4
   governs the push.
 
-## Open items
+- **The auto-load ritual + the C-6 obligation** → constitution.md
+  Rule 2's clause on auto-loaded files (named to Devon before
+  integration; re-read after landing) — restored on the cross-model
+  audit's finding F6.
 
-- **SPEC graduation candidate (v0.2.x): the auto-load ritual** — the
-  first consumer's profile now generalizes the long-session snapshot
-  caveat ("after integrating a change to any auto-loaded config file,
-  restart or re-read before relying on it — the landing session
-  included") and co-locates the C-6 obligation; the SPEC's own
-  long-session note (profile-contract territory / subagents clause)
-  should echo it vendor-neutrally.
+## Open items
 - **Lesson → convention graduation hierarchy** (Devon's future ask, his
   trigger): document how register entries (case-law) graduate into
   binding conventions (law); precedent: Entry 2 → the constitution's

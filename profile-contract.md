@@ -34,8 +34,10 @@ Lanes are declaration-only: name them by their technical kind.
 
 Where briefs land (the `episodes/` root is fixed by the convention;
 say what else the project expects in a brief — e.g. the acceptance
-checks it must list); which lane integrates and how (plain merge on
-the main branch, or a plain-lane commit that closes the episode); any
+checks it must list); in which lane and how the gate is run on the
+merge candidate (and which lanes cannot run it, lacking a toolchain
+or a browser); which lane integrates and how (plain merge on the main
+branch, or a plain-lane commit that closes the episode); any
 project-specific preconditions a session must probe before building
 on the main checkout, each with its failure action (STOP and hand
 back).
@@ -45,7 +47,8 @@ back).
 Who reviews — a read-only Refiner, a second session, another model —
 and how read-only is enforced for it (tool profile, plan mode, a deny
 rule). If the reviewer cannot commit, say how its findings reach the
-branch (Mark commits them, both attributed).
+branch (it writes the file or returns its text; Mark commits, both
+attributed).
 
 ## Implementation docs
 

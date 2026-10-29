@@ -31,8 +31,9 @@ read from vendored locations where repo-relative paths are dead.
 | **episode** | one unit of asked work: brief → branch → gate → review → merge | "a unit of work" |
 
 Casing rule: docs and agent-directed text always write the cast names
-capitalized; lowercase forms are accepted only when Devon types them —
-never write them back. The names' story, and the anti-overstretch
+(Devon, Mark, Refiners) capitalized, and the working nouns (episode,
+tapes, brief, findings) lowercase; lowercase cast names are accepted
+only when Devon types them — never write them back. The names' story, and the anti-overstretch
 principle governing them, live in the RECORD — the companion
 narrative artifact, `RECORD.md` (`conceit.md` upstream) — law here,
 lore there. Generic names used in this law's examples:

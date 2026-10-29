@@ -64,8 +64,9 @@ that arise by accident (a shared build volume once broadcast
 who-built-last via baked paths). *Why they lost:* C-4, C-5, C-7, C-8,
 C-11 presuppose the shared mount; C-1, C-2, C-3, C-9 collapsed into
 the rewritten Rule 2's deletion test and its one-line ban on anything
-invisible in a rendered diff; C-6 survives in spirit as the
-"Refiners inherit" caution and the auto-load ritual; C-10 is still
+invisible in a rendered diff; C-6 survives as the rewritten
+Rule 2's clause on auto-loaded files (named to Devon before
+integration; re-read after landing); C-10 is still
 deferred. *Revisit if:* a channel is found that the deletion test
 does not catch — the list was built by naming real routes, and the
 practice of naming routes is the part worth keeping.

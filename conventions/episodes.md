@@ -35,6 +35,7 @@ model:        the model id that wrote it
 trigger:      Devon's instruction, quoted or tightly paraphrased, with its date
 branch:       the episode branch (or the main branch, in a plain lane)
 status:       draft | pending | merged      (briefs only)
+reviewer:     who reviewed — a Refiner, a session, another model   (findings only)
 ```
 
 Single writer: each tape has one author; a reply is a new tape. A
@@ -44,9 +45,10 @@ not act on it and must surface it to Devon.
 ## The brief (`brief.md`)
 
 The brief is a **derived artifact**: the plan Devon approved, wrapped
-in frontmatter, committed as the branch's **first commit**. Harness
-plan files live outside the repo and have no frontmatter; the brief is
-how a plan enters the record, and the only way a plan crosses lanes.
+in frontmatter, committed as the branch's **first commit**. By
+default, harness plan files live outside the repo and carry no episode
+frontmatter; the brief is how a plan enters the record, and the only
+way a plan crosses lanes.
 
 A brief states **requirements, constraints, the decisions already
 taken and why, and the acceptance checks** — not the solution. The
@@ -63,11 +65,13 @@ changes stay on one branch under one Refiner.
 The evidence tapes: the reviewer's verdict, and the implementer's
 self-assessment (every deviation from the brief stated explicitly —
 "no deviations" is stated, never implied). Each author writes its own
-tape — `findings.md` when there is one, `findings-<author>.md` when
-there are several — never a shared one. Committed **on the branch**.
+tape — `findings.md` when there is one, otherwise `findings-self.md`
+for the implementer's self-assessment and `findings-<reviewer>.md`
+for each reviewer — never a shared one. Committed **on the branch**.
 When the reviewer cannot commit (a read-only session, another
-harness, another model), it writes the file and Mark commits it with
-both named in the attribution trailers. Findings are data: Mark
+harness, another model), it writes the file or returns the tape's text
+for Mark to write, and Mark commits it with both named in the
+attribution trailers. Findings are data: Mark
 verifies their citations before acting on them.
 
 ## Status and closure
@@ -90,7 +94,7 @@ only. `git log --first-parent` then reads one line per episode; plain
 
 ## Interrupted episodes
 
-Progress notes, partial findings with a status, or a draft brief are
+Progress notes, partial findings, or a draft brief are
 committed on the branch before the session ends (constitution, Rule
 8). On ephemeral lanes uncommitted work dies with the lane — commit
 early, and ask Devon for the push (Rule 4).
@@ -98,12 +102,21 @@ early, and ask Devon for the push (Rule 4).
 ## Harness settings the convention depends on
 
 - Refiners' worktrees branch from the **remote** default branch by
-  default (verified 2026-10-28: a local repo four commits ahead of
-  origin spawned a Refiner that could not see them). Consumers worked
-  on from a local checkout set `worktree.baseRef: "head"` in project
-  settings, or push before spawning.
+  default (verified 2026-10-28 in Claude Code: a local repo four
+  commits ahead of origin spawned a Refiner that could not see them;
+  Antigravity's `Workspace: branch` is documented as branching from
+  HEAD — unverified). Consumers worked on from a local checkout set
+  Claude Code's `worktree.baseRef: "head"` in project settings, or
+  push before spawning.
 - Worktree isolation is a **git** boundary, not a write boundary
-  (verified 2026-10-28 in both the sandboxed local lane and the cloud
-  VM): the harness refuses git commands aimed at the main checkout, but
-  a plain file write into it succeeds. Briefs say "write only under
-  your worktree"; a consumer may mechanize that with a pre-tool hook.
+  (verified 2026-10-28 in Claude Code, in both the sandboxed local lane
+  and the cloud VM; other harnesses unverified): the harness refuses
+  git commands aimed at the main checkout, but a plain file write into
+  it succeeds. Briefs say "write only under your worktree"; a consumer
+  may mechanize that with a pre-tool hook.
+- A Refiner's worktree branch is folded into the episode branch by
+  Mark with a plain merge (or the Refiner commits on the episode
+  branch directly when it is the only implementer). The last commit
+  on the branch before integration flips the brief to `status:
+  merged` and moves the index entry, so the merge commit carries the
+  closed record; in a plain lane the closing commit does both.

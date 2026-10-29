@@ -11,7 +11,7 @@ An **episode** is one unit of asked work, end to end: a brief
 (Devon's approved plan, in frontmatter) → the work → the gate → a
 review → Devon's authorization → integration. Each lives in its own
 `<date>-<topic>/` directory holding its tapes: `brief.md` (intent)
-and `findings.md` (evidence). The convention is
+and one findings tape per author (evidence). The convention is
 `conventions/episodes.md`; the rationale is `reintegration.md`.
 
 Status is in each brief's frontmatter: `draft` (planning paused),
