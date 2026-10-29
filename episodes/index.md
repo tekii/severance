@@ -19,6 +19,10 @@ Status is in each brief's frontmatter: `draft` (planning paused),
 the pending ones first. No numbering, no seasons: the date and the
 topic are the identity.
 
+## Draft
+
+*(none)*
+
 ## Pending
 
 - [2026-10-28 — law rewrite](2026-10-28-law-rewrite/brief.md) — step

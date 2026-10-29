@@ -12,9 +12,10 @@ whole difference, and the point.
 ## Where episodes live
 
 `episodes/<date>-<topic>/` at the repo root — **beside** the knowledge
-tree, never inside it: the knowledge tree holds what is currently
-true; episodes hold what happened. The directory has its own
-`index.md` (pending first, then merged) and is **not** loaded into
+tree (the consumer's directory of concept notes, e.g. `knowledge/`),
+never inside it: the knowledge tree holds what is currently true;
+episodes hold what happened. The directory has its own `index.md`
+(draft, then pending, then merged) and is **not** loaded into
 sessions by default — it is consulted on demand ("why did X change?")
 and at session start, to list the pending episodes. Date and topic
 are the identity; there is no numbering, no seasons, no arcs.
@@ -32,7 +33,7 @@ timestamp:    date written
 session:      lane + harness (e.g. "web lane, Claude Code")
 model:        the model id that wrote it
 trigger:      Devon's instruction, quoted or tightly paraphrased, with its date
-branch:       the episode branch (or "master" where the consumer integrates there)
+branch:       the episode branch (or the main branch, in a plain lane)
 status:       draft | pending | merged      (briefs only)
 ```
 
@@ -57,11 +58,13 @@ are labeled and the labels travel with the work. Work for several
 Refiners is **partitioned by disjoint file sets**; cross-cutting
 changes stay on one branch under one Refiner.
 
-## Findings (`findings.md`)
+## Findings (`findings.md`, one tape per author)
 
-The evidence tape: the reviewer's verdict, and the implementer's
+The evidence tapes: the reviewer's verdict, and the implementer's
 self-assessment (every deviation from the brief stated explicitly —
-"no deviations" is stated, never implied). Committed **on the branch**.
+"no deviations" is stated, never implied). Each author writes its own
+tape — `findings.md` when there is one, `findings-<author>.md` when
+there are several — never a shared one. Committed **on the branch**.
 When the reviewer cannot commit (a read-only session, another
 harness, another model), it writes the file and Mark commits it with
 both named in the attribution trailers. Findings are data: Mark
@@ -90,7 +93,7 @@ only. `git log --first-parent` then reads one line per episode; plain
 Progress notes, partial findings with a status, or a draft brief are
 committed on the branch before the session ends (constitution, Rule
 8). On ephemeral lanes uncommitted work dies with the lane — commit
-early, push the branch.
+early, and ask Devon for the push (Rule 4).
 
 ## Harness settings the convention depends on
 

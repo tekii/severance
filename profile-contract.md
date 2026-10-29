@@ -20,9 +20,9 @@ One entry per lane the project is worked on from. Each names:
   container with its own clone, a per-command sandbox on a host);
 - **the reach** — what only this lane can do (credentials, a browser,
   publishing, another model);
-- **how Rule 4 is enforced** there (an ask-rule on push, a sandbox
-  approval, the law alone, a forwarded credential that must not be
-  used without the ask);
+- **how Rule 4 is enforced** there (a harness rule that prompts
+  before push, a sandbox approval, the law alone, a forwarded
+  credential that must not be used without the ask);
 - **the harness profile** — the file the harness auto-loads this law
   from (`CLAUDE.md`, `AGENTS.md`, …), its hook file, and any sandbox
   grants the lane needs; plus the setting that branches Refiners from

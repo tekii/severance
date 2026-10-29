@@ -34,7 +34,9 @@ and gives a **testable** violation criterion.
 ## Rules / invariants
 
 **Rule 1 — every episode is user-triggered.** A brief exists only
-because Devon approved a plan; one approval authorizes one episode.
+because Devon approved a plan; one approval authorizes one episode. (A
+`draft` brief records a plan Devon asked to pause and keep; it
+authorizes nothing.)
 Integration and push each need their own authorization. No session
 opens, drafts, schedules or automates an episode on its own
 initiative — "helpfully" pre-writing a brief Devon has not asked for
@@ -70,8 +72,8 @@ count: it is stale by the time it is used.
 user-authorized.** Never `git push`, deploy, publish, delete a remote
 ref or rewrite shared history without an explicit ask — even after a
 clean integration. This binds every lane; the consumer profile names
-how each lane enforces it (an ask-rule, a sandbox approval, the law
-alone).
+how each lane enforces it (a harness rule that prompts before push, a
+sandbox approval, the law alone).
 
 **Rule 5 — one Mark per checkout at a time.** Two sessions on one
 working copy share one HEAD; a checkout, reset or merge by one moves
@@ -99,13 +101,15 @@ Not in memory, not in chat.
 
 ## The episode flow
 
-1. **Plan** — Mark and Devon shape the work in plan mode; Devon
-   approves (editing first if wanted). *Reading the plan is the human
+1. **Plan** — Mark and Devon shape the work in the harness's planning
+   mode (proposal only, no edits); Devon approves (editing first if
+   wanted). *Reading the plan is the human
    checkpoint.*
 2. **Brief** — the approved plan, wrapped in frontmatter, committed as
    the branch's first commit (episodes convention).
 3. **Implement** — Refiners in isolated worktrees on the episode
-   branch, briefed verbatim. Large work is partitioned by disjoint
+   branch, briefed verbatim (or Mark itself, for work it authors —
+   prose, configuration). Large work is partitioned by disjoint
    file sets; cross-cutting changes stay on one branch.
 4. **Gate** — Mark runs the consumer's gate on the merge candidate.
 5. **Review** — the reviewer reads the brief and the diff, not Mark's
@@ -115,9 +119,10 @@ Not in memory, not in chat.
 8. **Integrate** — a plain merge commit, no squash; its message carries
    the gate result and the authorization.
 
-Where a consumer integrates on its main branch directly (a vendor
-repo in a plain lane), steps 2–6 still produce the tapes; the commit
-that closes the episode carries what the merge message would.
+Where a consumer integrates on its **main branch** (`master` or
+`main`) directly — a *plain lane*: one session, no episode branch —
+steps 2–6 still produce the tapes; the commit that closes the episode
+carries what the merge message would.
 
 ## Briefs resist collapse
 
@@ -163,9 +168,9 @@ consumer may enforce it with a pre-tool hook.
 After implementing a brief — before handing back or committing the
 last of it — the implementer **re-walks the steps it actually took**
 against this SPEC, the consumer profile and the consumer's committed
-conventions, and **reports the result explicitly** in the findings:
-every deviation, judgment call, improvisation or latitude exercised —
-and "no deviations" stated, never implied.
+conventions, and **reports the result explicitly** in a findings tape
+of its own: every deviation, judgment call, improvisation or latitude
+exercised — and "no deviations" stated, never implied.
 
 ## The reviewer
 
@@ -179,8 +184,8 @@ commits it, both named in the attribution.
 
 ## Refuse by handing back, never silently
 
-If verification refutes a claim in a brief, an anchor is stale, or a
-precondition fails, **do not apply the bad part** and **do not
+If verification refutes a claim in a brief, a cited location no
+longer matches the tree, or a precondition fails, **do not apply the bad part** and **do not
 silently comply or silently deviate**: write findings stating what is
 verified vs wrong, with the corrected mechanism, and stop. Mark
 revises the brief on Devon's trigger; the work resumes from the

@@ -33,8 +33,9 @@ read from vendored locations where repo-relative paths are dead.
 Casing rule: docs and agent-directed text always write the cast names
 capitalized; lowercase forms are accepted only when Devon types them —
 never write them back. The names' story, and the anti-overstretch
-principle governing them, live in the RECORD (`conceit.md` upstream) —
-law here, lore there. Generic names used in this law's examples:
+principle governing them, live in the RECORD — the companion
+narrative artifact, `RECORD.md` (`conceit.md` upstream) — law here,
+lore there. Generic names used in this law's examples:
 **Lumon** = the generic company, **Cold Harbor** = the generic consumer
 project (doc-only terms; they never name a real filesystem path).
 
