@@ -84,6 +84,21 @@ replaced by one-line pointers when they do.
   priority over the law). *Hold:* the word budget. Weakest merges to
   question: comments→11, bundled decisions→12, harness config→13.
   Comprehension interviews on Devon's trigger.
+- **SPEC wording: "cross-model when one is available" (constitution,
+  "The reviewer") — sharpen at the next release.** Raised by Devon
+  (2026-10-29): one agy audit per episode is expensive — two relays by
+  hand plus Mark's citation check (Rule 6; agy fabricated quotes in two
+  of three runs). The law already requires only an unanchored review
+  (step 5); agy is one acceptable reviewer, not the mandated one, but
+  the phrase reads as "mandatory whenever another model exists".
+  Proposed: "cross-model when the brief calls for it", with the tier
+  living in the consumer profile's Reviewer section — default a
+  read-only Refiner; another model on law surfaces, conventions, the
+  gate, trace-note removals, or Devon's call at plan approval; the
+  brief's `reviewer:` records which. Cost of the tier, stated: a
+  same-model Refiner shares Mark's blind spots — this repo's first
+  episode's one law gap (the auto-load clause, F6) was found by agy
+  alone.
 - **Lesson → convention graduation hierarchy** (Devon's future ask, his
   trigger): document how register entries (case-law) graduate into
   binding conventions (law); precedent: Entry 2 → the constitution's
