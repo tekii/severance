@@ -29,8 +29,8 @@ frontmatter() {
 
 {
     frontmatter 'Convention' \
-        'SEVERANCE — the severed multi-session workflow (SPEC)' \
-        "The Severance workflow's binding law — constitution, conventions, profile contract — amalgamated at v$VERSION. Vendored copy: do not edit; update by re-vendoring a release." \
+        'SEVERANCE — the Unsevered workflow (SPEC)' \
+        "The Severance workflow's binding law in its Unsevered form — constitution, the episodes convention and the other conventions, profile contract — amalgamated at v$VERSION. Vendored copy: do not edit; update by re-vendoring a release." \
         '[severance, spec, workflow, vendored]'
     for f in $(section spec); do
         printf '\n<!-- ═══ source: %s ═══ -->\n\n' "$f"
@@ -52,7 +52,7 @@ if [ -n "$REC" ]; then
     {
         frontmatter 'Reference' \
             'SEVERANCE — experiment record (RECORD)' \
-            "The Severance experiment's narrative record — conceit, prior art, learnings register — built at v$VERSION. For human readers; not loaded into sessions." \
+            "The Severance experiment's narrative record — conceit, prior art, learnings register, the reintegration (Severance → Unsevered) and the trace of the retired machinery — built at v$VERSION. For human readers; not loaded into sessions." \
             '[severance, record, experiment]'
         for f in $REC; do
             printf '\n<!-- ═══ source: %s ═══ -->\n\n' "$f"
