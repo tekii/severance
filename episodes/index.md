@@ -25,10 +25,15 @@ topic are the identity.
 
 ## Pending
 
-- [2026-10-28 — law rewrite](2026-10-28-law-rewrite/brief.md) — step
-  2 of the Severance → Unsevered migration: the SPEC's sources
-  rewritten to the episode flow. Runs on `master` by Devon's ruling.
+*(none)*
 
 ## Merged
 
-*(none yet)*
+- [2026-10-28 — law rewrite](2026-10-28-law-rewrite/brief.md) — step
+  2 of the Severance → Unsevered migration: the SPEC's sources
+  rewritten to the episode flow. Ran on `master` by Devon's ruling;
+  eight commits, `03a1482` … the closing commit; reviewed by a
+  fresh-context Refiner and by agy
+  ([findings-fresh-read](2026-10-28-law-rewrite/findings-fresh-read.md),
+  [findings-agy](2026-10-28-law-rewrite/findings-agy.md),
+  [findings-self](2026-10-28-law-rewrite/findings-self.md)).

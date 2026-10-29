@@ -225,7 +225,7 @@ times — a self-reported VERIFIED label is itself a relayed claim.
 | VS Code forwards host git credentials into containers | **inferred** | a dry-run push authenticated with no `gh` or token in the container |
 | Devcontainer under a volume clone | **verified** (on the evidence shown) | Cold Harbor cloned into a container volume: HEAD == `origin/master`, only tracked `.claude/` content present, fresh config volume, Claude Code and Playwright MCP up, `make test` passing, dry-run push authenticated. Not shown: the `findmnt` source line and build-log mount warnings |
 | Browser in the web lane | **optional / low priority** | an old cloud session showed screenshots — identify the tool |
-| SPEC token budget after the law rewrite | **measured by `wc -w`; loaded size pending** | `[spec]` sources 3,878 → 4,575 words (an episode convention gained, a channel lost); ≈ 8.1k tokens by the v0.1.0 ratio (4.6k words → 8.2k loaded), against the design's ≤ ~9k budget. Measure the loaded size in the first consumer session after release |
+| SPEC token budget after the law rewrite | **measured by `wc -w`; loaded size pending** | `[spec]` sources 3,878 → 4,925 words at the episode's close (an episode convention gained, a channel lost; two audits added definitions and obligations a cold reader needed); ≈ 8.7k tokens by the v0.1.0 ratio (4.6k words → 8.2k loaded), against the design's ≤ ~9k budget — inside, with little headroom. Measure the loaded size in the first consumer session after release; a trim episode is the remedy if it exceeds the budget |
 
 ## Register candidates born of this phase
 
